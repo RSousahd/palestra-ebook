@@ -1,251 +1,999 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Palestras de Alta Performance Humana em Goiânia e Aparecida | Responsabilidade Radical</title>
-
-  <!-- FAVICON -->
-  <link rel="icon" href="/palestra-ebook/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/palestra-ebook/favicon.ico" type="image/x-icon">
-
-  <!-- SEO PRINCIPAL -->
-  <meta name="description" content="Palestras de alta performance humana em Goiânia, Aparecida de Goiânia e em todo o Brasil. Desenvolvimento pessoal, responsabilidade radical, disciplina e mudança real de comportamento para empresas, escolas e instituições." />
-
-  <meta name="keywords" content="palestra motivacional Goiânia, palestra desenvolvimento pessoal Goiânia, palestrante Goiânia, palestra empresarial Aparecida de Goiânia, alta performance humana Brasil, responsabilidade radical, palestra corporativa" />
-
-  <meta name="author" content="Responsabilidade Radical – Palestras de Alta Performance Humana" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- SEO LOCAL -->
-  <meta name="geo.region" content="BR-GO" />
-  <meta name="geo.placename" content="Goiânia, Aparecida de Goiânia" />
-  <meta name="geo.position" content="-16.6869;-49.2648" />
-  <meta name="ICBM" content="-16.6869, -49.2648" />
-
-  <!-- OPEN GRAPH (REDES SOCIAIS) -->
-  <meta property="og:title" content="Palestras de Alta Performance Humana | Responsabilidade Radical" />
-  <meta property="og:description" content="Palestras presenciais e online em Goiânia, Aparecida de Goiânia e Brasil. Quando a motivação falha, a responsabilidade sustenta resultados." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-
-  <!-- SEO MOBILE -->
-  <meta name="theme-color" content="#f97316" />
-
-  <style>
-    :root {
-      --bg-dark: #070707;
-      --bg-light: #111111;
-      --primary: #f97316;
-      --primary-dark: #c2410c;
-      --text-main: #f5f5f5;
-      --text-muted: #bfbfbf;
-      --border: #1f1f1f;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.75;
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: auto;
-      padding: 100px 20px;
-    }
-
-    h1, h2 {
-      font-weight: 900;
-      line-height: 1.12;
-      letter-spacing: -0.7px;
-    }
-
-    h1 { font-size: clamp(2.6rem, 5vw, 3.8rem); }
-    h2 { font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: 28px; }
-
-    p {
-      font-size: 1.18rem;
-      color: var(--text-muted);
-      max-width: 880px;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: radial-gradient(circle at top, #1a1a1a, #040404);
-    }
-
-    .badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #0f172a, #020617);
-      padding: 12px 22px;
-      border-radius: 40px;
-      font-size: 0.78rem;
-      margin-bottom: 30px;
-      color: #9ca3af;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-    }
-
-    .highlight { color: var(--primary); }
-
-    .cta {
-      display: inline-block;
-      margin-top: 46px;
-      padding: 22px 56px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #fff;
-      text-decoration: none;
-      font-weight: 900;
-      border-radius: 80px;
-      font-size: 1.15rem;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 28px 60px rgba(249,115,22,.55);
-    }
-
-    .section {
-      padding: 140px 0;
-      border-top: 1px solid var(--border);
-      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.01));
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 48px;
-      margin-top: 52px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, #141414, #090909);
-      padding: 52px;
-      border-radius: 28px;
-      border: 1px solid #242424;
-      font-weight: 600;
-    }
-
-    .footer {
-      padding: 90px 20px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #9ca3af;
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 768px) {
-      .container { padding: 80px 18px; }
-      .card { padding: 36px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Systems Architect & Product Builder especializado em MVPs, SaaS, ERPs e sistemas empresariais escaláveis com Inteligência Artificial.">
+    <meta name="keywords" content="AI Architect, SaaS Development, MVP Builder, ERP Systems, AI Product Builder, Sistemas Escaláveis">
+    <meta name="author" content="AI Systems Architect">
+    <meta property="og:title" content="AI Systems Architect | Plataformas Escaláveis com IA">
+    <meta property="og:description" content="Construo Plataformas e Sistemas Escaláveis com Inteligência Artificial. MVPs em 7-15 dias.">
+    <meta property="og:type" content="website">
+    <title>AI Systems Architect | Plataformas Escaláveis com IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a25;
+            --accent-primary: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(99, 102, 241, 0.2);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 15, 0.8);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .grid-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .process-line {
+            background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+        }
+        
+        .tech-badge {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+        
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #6366f1;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .project-card-image {
+            background: linear-gradient(135deg, #1a1a25 0%, #252535 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card-hover:hover .project-card-image::before {
+            opacity: 1;
+        }
+        
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fafafa 0%, #a1a1aa 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<base target="_blank">
 </head>
-<body>
+<body class="antialiased selection:bg-indigo-500 selection:text-white">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <span class="badge">Palestras Corporativas • Alta Performance Humana</span>
-    <h1>Quando a motivação falha,<br><span class="highlight">a responsabilidade sustenta resultados</span>.</h1>
-    <p>
-      O cérebro evita dor, confronto e esforço prolongado. Por isso a maioria repete padrões.
-      Esta palestra atua onde a motivação não alcança: decisão, consequência e comportamento sustentado.
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="font-semibold text-lg tracking-tight">AI Architect</span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors">Sobre</a>
+                    <a href="#portfolio" class="text-sm text-gray-400 hover:text-white transition-colors">Portfólio</a>
+                    <a href="#process" class="text-sm text-gray-400 hover:text-white transition-colors">Processo</a>
+                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-medium text-white">Agendar Diagnóstico</a>
+                </div>
+                
+                <button class="md:hidden text-white" id="mobile-menu-btn">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-[#0a0a0f] border-t border-white/10" id="mobile-menu">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#about" class="block text-gray-400 hover:text-white">Sobre</a>
+                <a href="#portfolio" class="block text-gray-400 hover:text-white">Portfólio</a>
+                <a href="#process" class="block text-gray-400 hover:text-white">Processo</a>
+                <a href="#contact" class="block text-indigo-400 font-medium">Agendar Diagnóstico</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden grid-pattern">
+        <div class="hero-glow"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 reveal">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-sm text-gray-400">Disponível para novos projetos</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 reveal" style="transition-delay: 100ms;">
+                Construo Plataformas<br>
+                <span class="gradient-text typing-cursor" id="typing-text">e Sistemas Escaláveis</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 reveal" style="transition-delay: 200ms;">
+                Especialista em MVPs, SaaS, ERPs, Marketplaces e Sistemas Empresariais desenvolvidos com IA avançada e engenharia de prompt.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal" style="transition-delay: 300ms;">
+                <a href="#portfolio" class="btn-primary px-8 py-4 rounded-full text-base font-medium text-white flex items-center gap-2">
+                    Ver Projetos
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </a>
+                <a href="#contact" class="btn-secondary px-8 py-4 rounded-full text-base font-medium text-white flex items-center gap-2">
+                    Agendar Diagnóstico Estratégico
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                </a>
+            </div>
+            
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto reveal" style="transition-delay: 400ms;">
+                <div class="text-center">
+                    <div class="stat-number text-4xl mb-2">70%</div>
+                    <div class="text-sm text-gray-500">Redução no tempo de dev</div>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number text-4xl mb-2">5+</div>
+                    <div class="text-sm text-gray-500">Plataformas em operação</div>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number text-4xl mb-2">2</div>
+                    <div class="text-sm text-gray-500">Países atendidos</div>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number text-4xl mb-2">7-15</div>
+                    <div class="text-sm text-gray-500">Dias para MVP</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-600"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        Arquitetura de sistemas<br>
+                        <span class="text-indigo-400">potencializada por IA</span>
+                    </h2>
+                    <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+                        <p>
+                            Experiência comprovada na criação de múltiplas plataformas complexas que operam em escala no Brasil e Portugal. Combino arquitetura de software robusta com Inteligência Artificial de ponta para entregar sistemas que transcendem expectativas.
+                        </p>
+                        <p>
+                            Minha abordagem reduz o tempo de desenvolvimento tradicional em até 70%, mantendo padrões enterprise de qualidade, segurança e escalabilidade. Cada projeto é arquitetado para crescer junto com seu negócio.
+                        </p>
+                        <p>
+                            Especialização em transformar conceitos abstratos em produtos digitais tangíveis, com foco obsessivo em performance, UX estratégica e arquitetura modular que permite evolução contínua.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 flex flex-wrap gap-3">
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">AI Architecture</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">System Design</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">Prompt Engineering</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">Cloud Infrastructure</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">API Design</span>
+                    </div>
+                </div>
+                
+                <div class="relative reveal">
+                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur-3xl opacity-20"></div>
+                    <div class="relative bg-[#12121a] border border-white/10 rounded-3xl p-8 floating">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-[#1a1a25] rounded-2xl p-6 border border-white/5">
+                                <i data-lucide="zap" class="w-8 h-8 text-yellow-500 mb-4"></i>
+                                <h3 class="font-semibold mb-2">Velocidade</h3>
+                                <p class="text-sm text-gray-500">MVPs operacionais em tempo recorde sem comprometer qualidade</p>
+                            </div>
+                            <div class="bg-[#1a1a25] rounded-2xl p-6 border border-white/5 mt-8">
+                                <i data-lucide="shield" class="w-8 h-8 text-green-500 mb-4"></i>
+                                <h3 class="font-semibold mb-2">Escalabilidade</h3>
+                                <p class="text-sm text-gray-500">Arquitetura preparada para milhões de usuários</p>
+                            </div>
+                            <div class="bg-[#1a1a25] rounded-2xl p-6 border border-white/5">
+                                <i data-lucide="brain" class="w-8 h-8 text-purple-500 mb-4"></i>
+                                <h3 class="font-semibold mb-2">IA Nativa</h3>
+                                <p class="text-sm text-gray-500">Integração avançada de modelos LLM e ML</p>
+                            </div>
+                            <div class="bg-[#1a1a25] rounded-2xl p-6 border border-white/5 mt-8">
+                                <i data-lucide="globe" class="w-8 h-8 text-blue-500 mb-4"></i>
+                                <h3 class="font-semibold mb-2">Global</h3>
+                                <p class="text-sm text-gray-500">Operação multi-país com compliance local</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-32 bg-[#12121a] relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Portfólio de Projetos</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Sistemas complexos em operação que demonstram capacidade técnica e visão estratégica
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal">
+                    <div class="project-card-image h-48 flex items-center justify-center">
+                        <div class="text-center">
+                            <i data-lucide="calculator" class="w-16 h-16 text-indigo-500 mx-auto mb-2 opacity-80"></i>
+                            <span class="text-sm text-gray-500">Interface Preview</span>
+                        </div>
+                    </div>
+                   <div class="p-6">
+    <h3 class="text-xl font-bold mb-2">Obra Calc Pro</h3>
+    <p class="text-gray-400 text-sm mb-4">
+        Calculadora inteligente de materiais de construção com precisão técnica avançada, orçamentação automatizada e gestão de custos integrada.
     </p>
-    <a href="#contato" class="cta">Avaliar se essa palestra é para sua equipe</a>
-  </div>
-</section>
-
-<!-- PARADOXO -->
-<section class="section">
-  <div class="container">
-    <h2>O paradoxo da mudança real</h2>
-    <p>
-      As pessoas dizem que querem mudar, mas protegem os mesmos hábitos.
-      A virada ocorre quando o custo de permanecer igual se torna maior que o desconforto da mudança.
-    </p>
-  </div>
-</section>
-
-<!-- AUTORIDADE -->
-<section class="section">
-  <div class="container">
-    <h2>Autoridade construída sob pressão real</h2>
-    <p>
-      Sete anos em situação de rua. Dependência química. Ambientes onde erro custa caro.
-      A reconstrução aconteceu na prática — comportamento, disciplina e decisão diária.
-      Hoje atuo liderando pessoas, prazos e pressão operacional.
-    </p>
-  </div>
-</section>
-
-<!-- FRAMEWORK -->
-<section class="section">
-  <div class="container">
-    <h2>Os 4 eixos da performance sustentável</h2>
-    <div class="grid">
-      <div class="card">Responsabilidade radical: sem fuga cognitiva</div>
-      <div class="card">Disciplina comportamental: ação antes da emoção</div>
-      <div class="card">Trabalho como identidade: dignidade e valor pessoal</div>
-      <div class="card">Consciência de consequência: decisões de longo prazo</div>
+    <div class="flex flex-wrap gap-2 mb-6">
+        <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">React</span>
+        <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Python</span>
+        <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">AI Predict</span>
     </div>
-  </div>
-</section>
 
-<!-- PARA QUEM -->
-<section class="section">
-  <div class="container">
-    <h2>Indicada para ambientes onde erro tem custo</h2>
-    <p>
-      Empresas, lideranças e instituições que enfrentam baixa responsabilidade,
-      repetição de erros, falta de postura e queda de desempenho.
-    </p>
-    <div class="grid">
-      <div class="card">Equipes operacionais e técnicas</div>
-      <div class="card">Lideranças sob pressão de resultado</div>
-      <div class="card">Projetos educacionais e sociais</div>
-      <div class="card">Organizações em fase de correção cultural</div>
+    <a href="https://wandering-obra-calc-pro.base44.app" target="_blank" class="block w-full">
+        <button class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+            Ver Plataforma
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+        </button>
+    </a>
+</div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal" style="transition-delay: 100ms;">
+                    <div class="project-card-image h-48 flex items-center justify-center">
+                        <div class="text-center">
+                            <i data-lucide="users" class="w-16 h-16 text-purple-500 mx-auto mb-2 opacity-80"></i>
+                            <span class="text-sm text-gray-500">Interface Preview</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Moob Serviços</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Marketplace de serviços com matching inteligente, geolocalização avançada e sistema de pagamentos escrow automatizado.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Node.js</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">PostgreSQL</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">AWS</span>
+                        </div>
+                        <a href="https://moob-servicos.base44.app" target="_blank" 
+   class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+    Ver Plataforma
+    <i data-lucide="external-link" class="w-4 h-4"></i>
+</a>
+                    </div>
+                </div>
+                
+              <!-- Project 3 -->
+<div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal" style="transition-delay: 200ms;">
+    <div class="project-card-image h-48 flex items-center justify-center">
+        <div class="text-center">
+            <i data-lucide="map-pin" class="w-16 h-16 text-blue-500 mx-auto mb-2 opacity-80"></i>
+            <span class="text-sm text-gray-500">Interface Preview</span>
+        </div>
     </div>
-  </div>
-</section>
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">Prime Field Force</h3>
+        <p class="text-gray-400 text-sm mb-4">
+            Sistema de workforce management com rastreamento em tempo real, otimização de rotas e gestão de performance de equipes externas.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">React Native</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Go</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Redis</span>
+        </div>
 
-<!-- FORMATO -->
-<section class="section">
-  <div class="container">
-    <h2>Formato da intervenção</h2>
-    <div class="grid">
-      <div class="card">60–90 minutos de confronto produtivo</div>
-      <div class="card">Sem motivação vazia ou frases prontas</div>
-      <div class="card">Engajamento cognitivo e emocional controlado</div>
-      <div class="card">Espaço para reflexão e perguntas estratégicas</div>
+        <a href="https://prime-field-force.base44.app" 
+           target="_blank"
+           class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+            Ver Plataforma
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
     </div>
-  </div>
-</section>
+</div>
+                
+                <!-- Project 4 -->
+                 <!-- 
+                <div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal">
+                    <div class="project-card-image h-48 flex items-center justify-center">
+                        <div class="text-center">
+                            <i data-lucide="building-2" class="w-16 h-16 text-green-500 mx-auto mb-2 opacity-80"></i>
+                            <span class="text-sm text-gray-500">Interface Preview</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Prime ERP Flow</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            ERP empresarial modular com inteligência artificial para automação de processos, análise preditiva e gestão integrada de recursos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Next.js</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Prisma</span>
+                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">LLM Integration</span>
+                        </div>
+                        <button class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+                            Ver Plataforma
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                 -->
+               <!-- Project 5 -->
+<div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal" style="transition-delay: 100ms;">
+    <div class="project-card-image h-48 flex items-center justify-center">
+        <div class="text-center">
+            <i data-lucide="shopping-cart" class="w-16 h-16 text-orange-500 mx-auto mb-2 opacity-80"></i>
+            <span class="text-sm text-gray-500">Interface Preview</span>
+        </div>
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold mb-2">SmartCart Insights</h3>
+        <p class="text-gray-400 text-sm mb-4">
+            Sistema inteligente para supermercados com análise comportamental de clientes, otimização de layout e previsão de demanda em tempo real.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Python</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">TensorFlow</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">IoT</span>
+        </div>
 
-<!-- CTA FINAL -->
-<section class="section" id="contato">
-  <div class="container">
-    <h2>Essa palestra não é para todos</h2>
-    <p>
-      Se o objetivo é conforto emocional, não é indicada.
-      Se busca correção de mentalidade, postura e resultado sustentável,
-      faz sentido conversarmos. Agenda limitada.
-    </p>
-    <a href="https://wa.me/5562985558320" class="cta">Conversar no WhatsApp</a>
-  </div>
-</section>
+        <a href="https://meek-smart-cart-ai.base44.app/" 
+           target="_blank"
+           class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+            Ver Plataforma
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
 
-<footer class="footer">
-  © 2026 • Alta Performance Humana • Responsabilidade radical aplicada
-</footer>
+    <!-- Differentials Section -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Diferenciais Competitivos</h2>
+                <p class="text-xl text-gray-400">Por que grandes empresas escolhem esta abordagem</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="rocket" class="w-7 h-7 text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Desenvolvimento Acelerado</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Utilização de IA para automação de código, testes e deploy contínuo, reduzindo drasticamente o time-to-market sem comprometer qualidade.
+                    </p>
+                </div>
+                
+                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="network" class="w-7 h-7 text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Arquitetura Complexa</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Experiência em sistemas distribuídos, microserviços e arquitetura orientada a eventos que suportam milhões de transações diárias.
+                    </p>
+                </div>
+                
+                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="lightbulb" class="w-7 h-7 text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Validação Rápida</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Metodologia enxuta para testar hipóteses de negócio rapidamente, pivotando quando necessário com mínimo desperdício de recursos.
+                    </p>
+                </div>
+                
+                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="clock" class="w-7 h-7 text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">MVP em 7-15 Dias</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Protótipos funcionais e validáveis em tempo recorde, permitindo demonstração para investidores e early adopters imediatamente.
+                    </p>
+                </div>
+                
+                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="layers" class="w-7 h-7 text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Multi-setorial</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Expertise diversificada em construção civil, varejo, logística, serviços e indústria, trazendo best practices cross-industry.
+                    </p>
+                </div>
+                
+                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="cog" class="w-7 h-7 text-pink-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Engenharia de Prompt</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Domínio avançado de orquestração de LLMs, criando sistemas inteligentes que automatizam decisões complexas e análises preditivas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Process Section -->
+    <section id="process" class="py-32 bg-[#12121a] relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Processo de Trabalho</h2>
+                <p class="text-xl text-gray-400">Metodologia refinada para entrega consistente</p>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent md:-translate-x-1/2"></div>
+                
+                <div class="space-y-16">
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
+                        <div class="md:w-5/12 md:text-right order-2 md:order-1">
+                            <h3 class="text-2xl font-bold mb-3">Diagnóstico Estratégico</h3>
+                            <p class="text-gray-400">
+                                Análise profunda do problema de negócio, mapeamento de stakeholders, definição de KPIs e arquitetura de informação inicial.
+                            </p>
+                        </div>
+                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-indigo-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
+                            <span class="text-2xl font-bold text-indigo-400">01</span>
+                        </div>
+                        <div class="md:w-5/12 order-3"></div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
+                        <div class="md:w-5/12 order-2"></div>
+                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-purple-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
+                            <span class="text-2xl font-bold text-purple-400">02</span>
+                        </div>
+                        <div class="md:w-5/12 order-3 md:order-3">
+                            <h3 class="text-2xl font-bold mb-3">Arquitetura da Solução</h3>
+                            <p class="text-gray-400">
+                                Design técnico detalhado, seleção de stack tecnológico, modelagem de dados e planejamento de infraestrutura cloud-native.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
+                        <div class="md:w-5/12 md:text-right order-2 md:order-1">
+                            <h3 class="text-2xl font-bold mb-3">Desenvolvimento com IA</h3>
+                            <p class="text-gray-400">
+                                Codificação acelerada utilizando assistentes AI, pair programming automatizado e geração inteligente de testes unitários.
+                            </p>
+                        </div>
+                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-blue-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
+                            <span class="text-2xl font-bold text-blue-400">03</span>
+                        </div>
+                        <div class="md:w-5/12 order-3"></div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
+                        <div class="md:w-5/12 order-2"></div>
+                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-green-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
+                            <span class="text-2xl font-bold text-green-400">04</span>
+                        </div>
+                        <div class="md:w-5/12 order-3 md:order-3">
+                            <h3 class="text-2xl font-bold mb-3">Testes e Ajustes</h3>
+                            <p class="text-gray-400">
+                                QA automatizado, testes de carga, segurança e usabilidade. Refinamentos baseados em feedback real de usuários pilotos.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
+                        <div class="md:w-5/12 md:text-right order-2 md:order-1">
+                            <h3 class="text-2xl font-bold mb-3">Deploy e Escala</h3>
+                            <p class="text-gray-400">
+                                Implantação em produção com CI/CD, monitoramento contínuo, otimização de performance e plano de escalabilidade gradual.
+                            </p>
+                        </div>
+                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-pink-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
+                            <span class="text-2xl font-bold text-pink-400">05</span>
+                        </div>
+                        <div class="md:w-5/12 order-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-transparent"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%236366f1%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10 reveal">
+            <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                Transforme sua ideia em uma<br>
+                <span class="gradient-text">plataforma real</span> em tempo recorde
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Vamos discutir como a Inteligência Artificial pode acelerar o desenvolvimento do seu próximo sistema empresarial ou produto digital.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button class="btn-primary px-10 py-5 rounded-full text-lg font-medium text-white flex items-center gap-3 glow-effect" onclick="showContactModal()">
+                    Solicitar Parceria
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+            
+            <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 text-gray-500">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span>rafaelsoaresproo@gmail.com</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    <span>linkedin.com/in/rafael-soares-2979853b4/</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0f] border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i data-lucide="cpu" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">AI Systems Architect</div>
+                        <div class="text-sm text-gray-500">Especialista em Produtos e Arquitetura de IA</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-6 text-sm text-gray-500">
+                    <a href="rafaelsoaresproo@gmail.com" class="hover:text-white transition-colors">Email Profissional</a>
+                    <a href="https://www.linkedin.com/in/rafael-soares-2979853b4/" class="hover:text-white transition-colors">LinkedIn</a>
+                    <span>2024 Todos os direitos reservados</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeContactModal()"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-6">
+            <div class="bg-[#12121a] border border-white/10 rounded-2xl p-6 sm:p-8 
+            w-full max-w-md 
+            relative 
+            max-h-[90vh] overflow-y-auto">
+                <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+                <h3 class="text-2xl font-bold mb-2">Iniciar Conversa</h3>
+                <p class="text-gray-400 mb-6">Preencha os dados abaixo para agendarmos uma call estratégica.</p>
+                
+                <form class="space-y-4">
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Nome</label>
+        <input name="nome" type="text" required
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+            placeholder="Seu nome completo">
+    </div>
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Email</label>
+        <input name="email" type="email" required
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+            placeholder="seu@email.com">
+    </div>
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Telefone</label>
+        <input name="telefone" type="tel"
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+            placeholder="(62) 9 0000-0000">
+    </div>
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Empresa</label>
+        <input name="empresa" type="text"
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+            placeholder="Nome da sua empresa">
+    </div>
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Tipo de Projeto</label>
+        <select name="tipo_projeto"
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+            <option>MVP / SaaS</option>
+            <option>ERP Empresarial</option>
+            <option>Marketplace</option>
+            <option>Automação com IA</option>
+            <option>Aplicativo Mobile</option>
+            <option>Plataforma Web</option>
+            <option>Outro</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Orçamento Estimado</label>
+        <select name="orcamento"
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+            <option>Até R$ 10.000</option>
+            <option>R$ 10.000 - R$ 25.000</option>
+            <option>R$ 25.000 - R$ 50.000</option>
+            <option>Acima de R$ 50.000</option>
+            <option>Prefiro discutir em call</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Prazo Desejado</label>
+        <select name="prazo"
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+            <option>Urgente (até 30 dias)</option>
+            <option>1 a 3 meses</option>
+            <option>3 a 6 meses</option>
+            <option>Sem prazo definido</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Descreva seu projeto</label>
+        <textarea name="mensagem" rows="4"
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+            placeholder="Explique sua ideia, problema ou objetivo..."></textarea>
+    </div>
+
+    <div>
+        <label class="block text-sm text-gray-400 mb-2">Como nos conheceu?</label>
+        <select name="origem"
+            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
+            <option>Instagram</option>
+            <option>Google</option>
+            <option>Indicação</option>
+            <option>LinkedIn</option>
+            <option>Outro</option>
+        </select>
+    </div>
+
+    <div class="flex items-start gap-2">
+        <input type="checkbox" name="aceite" required class="mt-1">
+        <label class="text-xs text-gray-400">
+            Concordo em fornecer meus dados para contato.
+        </label>
+    </div>
+
+    <button type="submit" class="w-full btn-primary py-4 rounded-lg font-medium text-white mt-6">
+        Solicitar Contato
+    </button>
+
+</form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Typing Effect
+        const texts = ['e Sistemas Escaláveis', 'com Inteligência Artificial', 'que Transformam Negócios'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+        
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+        
+        // Start typing effect
+        setTimeout(type, 1000);
+        
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-lg');
+                navbar.style.background = 'rgba(10, 10, 15, 0.95)';
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.style.background = 'rgba(10, 10, 15, 0.8)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Modal Functions
+        function showContactModal() {
+            document.getElementById('contact-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeContactModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeContactModal();
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Parallax effect for hero glow
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.hero-glow');
+            const x = (window.innerWidth - e.pageX * 2) / 100;
+            const y = (window.innerHeight - e.pageY * 2) / 100;
+            
+            glow.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+        });
+
+         // Acrescentado: envio real para WhatsApp
+document.querySelector('#contact-modal form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const project = this.querySelector('select').value;
+
+    const message = `Olá! 👋
+Me chamo ${name}
+
+📧 Email: ${email}
+🚀 Tipo de Projeto: ${project}
+
+Gostaria de agendar uma call estratégica.`;
+
+    const phone = "5562985558520";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank');
+
+    closeContactModal();
+});
+    </script>
+   
 </body>
 </html>
