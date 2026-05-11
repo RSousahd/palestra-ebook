@@ -1,999 +1,871 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Systems Architect & Product Builder especializado em MVPs, SaaS, ERPs e sistemas empresariais escaláveis com Inteligência Artificial.">
-    <meta name="keywords" content="AI Architect, SaaS Development, MVP Builder, ERP Systems, AI Product Builder, Sistemas Escaláveis">
-    <meta name="author" content="AI Systems Architect">
-    <meta property="og:title" content="AI Systems Architect | Plataformas Escaláveis com IA">
-    <meta property="og:description" content="Construo Plataformas e Sistemas Escaláveis com Inteligência Artificial. MVPs em 7-15 dias.">
-    <meta property="og:type" content="website">
-    <title>AI Systems Architect | Plataformas Escaláveis com IA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-tertiary: #1a1a25;
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-glow: rgba(99, 102, 241, 0.15);
-            --text-primary: #fafafa;
-            --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
-            --border-subtle: rgba(255, 255, 255, 0.08);
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.02em;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .glow-effect {
-            box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
-        }
-        
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(99, 102, 241, 0.2);
-        }
-        
-        .nav-blur {
-            backdrop-filter: blur(20px);
-            background: rgba(10, 10, 15, 0.8);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-        }
-        
-        .btn-secondary {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
-        }
-        
-        .grid-pattern {
-            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
-            background-size: 40px 40px;
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .process-line {
-            background: linear-gradient(to bottom, #6366f1, #8b5cf6);
-        }
-        
-        .tech-badge {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .tech-badge:hover {
-            background: rgba(99, 102, 241, 0.2);
-            border-color: rgba(99, 102, 241, 0.4);
-        }
-        
-        .hero-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s infinite;
-            color: #6366f1;
-        }
-        
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-        
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        
-        .project-card-image {
-            background: linear-gradient(135deg, #1a1a25 0%, #252535 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-card-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .card-hover:hover .project-card-image::before {
-            opacity: 1;
-        }
-        
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            background: linear-gradient(135deg, #fafafa 0%, #a1a1aa 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
-<base target="_blank">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rafael Soares | Manutenção Preventiva Goiânia — Resolve Antes de Quebrar</title>
+<meta name="description" content="Especialista em manutenção preventiva residencial e predial em Goiânia e Aparecida de Goiânia. Planos de assinatura para famílias, imobiliárias e condomínios."/>
+<meta name="author" content="Rafael Soares"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://rafaelsoares.pro"/>
+<meta property="og:title" content="Rafael Soares | Manutenção Preventiva Goiânia"/>
+<meta property="og:description" content="Para de pagar caro em emergências. Planos de manutenção preventiva para residências, imobiliárias e condomínios em Goiânia."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://rafaelsoares.pro"/>
+<meta property="og:image" content="https://rafaelsoares.pro/img/bannes.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#b8860b"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="geo.region" content="BR-GO"/>
+<meta name="geo.placename" content="Goiânia"/>
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"HomeAndConstructionBusiness",
+  "name":"Rafael Soares Manutenção Preventiva",
+  "url":"https://rafaelsoares.pro",
+  "telephone":"+5562985558320",
+  "email":"rafaelsoaresproo@gmail.com",
+  "image":"https://rafaelsoares.pro/img/bannes.png",
+  "address":{"@type":"PostalAddress","addressLocality":"Goiânia","addressRegion":"GO","addressCountry":"BR"},
+  "areaServed":[{"@type":"City","name":"Goiânia"},{"@type":"City","name":"Aparecida de Goiânia"}],
+  "priceRange":"R$$",
+  "openingHours":["Mo-Fr 07:00-18:00","Sa 08:00-13:00"]
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --ink:#0c0e0f;--paper:#f5f0e8;--paper-2:#ede8df;--paper-3:#ddd8cf;
+  --gold:#b8860b;--gold-l:#d4a017;--gold-bright:#f0b429;
+  --gold-dim:rgba(184,134,11,.1);--gold-glow:rgba(184,134,11,.22);
+  --rust:#c0392b;--pine:#1a3a2a;--pine-l:#2d5a40;
+  --cream:#faf7f2;--smoke:#8a8278;--smoke-l:#b5b0a8;--white:#fff;
+  --f-serif:'Cormorant Garamond',Georgia,serif;
+  --f-sans:'Outfit',system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-back:cubic-bezier(.34,1.56,.64,1);
+  --max:1200px;--r:4px;
+}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-sans);line-height:1.6;overflow-x:hidden;cursor:none}
+::selection{background:var(--gold);color:#fff}
+img{max-width:100%;height:auto;display:block}
+
+/* CURSOR */
+#cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s var(--ease-back),height .25s var(--ease-back);mix-blend-mode:multiply}
+#cur-ring{position:fixed;width:32px;height:32px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .12s,top .12s,width .35s var(--ease-back),height .35s var(--ease-back),opacity .3s;opacity:.55}
+
+/* LOADER */
+#loader{position:fixed;inset:0;z-index:10000;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+#loader.out{opacity:0;transform:translateY(-4px);pointer-events:none}
+.ld-logo{font-family:var(--f-serif);font-weight:700;font-size:clamp(2rem,5vw,3.2rem);color:var(--paper);letter-spacing:.06em}
+.ld-logo span{color:var(--gold-bright);animation:wordUp .7s var(--ease) .3s both;display:inline-block}
+.ld-bar{width:180px;height:2px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.ld-fill{height:100%;background:var(--gold-bright);width:0;animation:loadFill 1.8s var(--ease) .5s forwards}
+.ld-city{font-size:.68rem;color:var(--smoke);letter-spacing:.22em;text-transform:uppercase}
+@keyframes loadFill{to{width:100%}}
+@keyframes wordUp{from{opacity:0;transform:translateY(110%)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes waPulse{0%{transform:scale(1);opacity:.8}50%{transform:scale(1.8);opacity:0}100%{transform:scale(1);opacity:0}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* CANVAS */
+#scene{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28}
+.site{position:relative;z-index:1}
+
+/* ── NAV ─────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:22px 64px;transition:padding .4s var(--ease),background .4s,border-color .4s,box-shadow .4s;border-bottom:1px solid transparent}
+nav.anchored{padding:14px 64px;background:rgba(250,247,242,.95);backdrop-filter:blur(24px);border-bottom-color:var(--paper-3);box-shadow:0 2px 20px rgba(12,14,15,.06)}
+.nav-logo{display:flex;flex-direction:column;text-decoration:none}
+.nav-logo-name{font-family:var(--f-serif);font-size:1.3rem;font-weight:700;color:var(--ink);letter-spacing:.06em;line-height:1}
+.nav-logo-name em{font-style:italic;font-weight:300;color:var(--gold)}
+.nav-logo-sub{font-size:.58rem;color:var(--smoke);letter-spacing:.2em;text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke);text-decoration:none;position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta-link{background:var(--ink)!important;color:var(--paper)!important;padding:10px 22px!important;border-radius:var(--r)!important;font-weight:600!important;transition:background .3s,transform .2s!important}
+.nav-cta-link::after{display:none!important}
+.nav-cta-link:hover{background:var(--gold)!important;color:#fff!important;transform:translateY(-1px)!important}
+.nav-burger{display:none;flex-direction:column;gap:5.5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* ── HERO ────────────────────────────────── */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:160px 72px 80px 80px;position:relative}
+.hero-left::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:linear-gradient(to bottom,transparent,var(--paper-3),transparent)}
+.hero-right{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 52px 60px 44px;background:linear-gradient(135deg,var(--paper) 0%,var(--paper-2) 100%);overflow:hidden;position:relative}
+
+.h-kicker{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0;animation:fadeUp .7s var(--ease) 2.2s forwards}
+.h-kicker::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.h-kicker-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 1.6s infinite}
+
+.h-title{font-family:var(--f-serif);font-size:clamp(3.6rem,6vw,7.2rem);font-weight:700;line-height:.9;color:var(--ink);margin-bottom:30px}
+.h-title-line{display:block;overflow:hidden}
+.h-title-word{display:inline-block;opacity:0;transform:translateY(105%)}
+.h-title-line:nth-child(1) .h-title-word{animation:wordUp .9s var(--ease) 2.4s forwards}
+.h-title-line:nth-child(2) .h-title-word{animation:wordUp .9s var(--ease) 2.6s forwards}
+.h-title-line:nth-child(3) .h-title-word{animation:wordUp .9s var(--ease) 2.8s forwards}
+.h-title em{font-style:italic;color:var(--gold);font-weight:300}
+
+.h-sub{font-size:1.05rem;color:var(--smoke);max-width:460px;line-height:1.78;margin-bottom:40px;opacity:0;animation:fadeUp .8s var(--ease) 3s forwards}
+.h-sub strong{color:var(--ink);font-weight:600}
+.h-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s var(--ease) 3.2s forwards}
+.h-trust{display:flex;align-items:center;gap:22px;margin-top:48px;padding-top:28px;border-top:1px solid var(--paper-3);opacity:0;animation:fadeUp .8s var(--ease) 3.4s forwards}
+.h-trust-item{text-align:center}
+.h-trust-num{font-family:var(--f-serif);font-size:1.7rem;font-weight:700;color:var(--ink);line-height:1}
+.h-trust-num sup{font-size:.85rem;font-weight:400;color:var(--gold)}
+.h-trust-label{font-size:.68rem;color:var(--smoke);letter-spacing:.04em;margin-top:2px;line-height:1.35}
+.h-trust-div{width:1px;height:34px;background:var(--paper-3)}
+
+/* Hero photo */
+.hero-photo-wrap{width:100%;max-width:430px;border-radius:16px 16px 0 0;overflow:hidden;flex-shrink:0;box-shadow:0 -8px 48px rgba(12,14,15,.1);position:relative}
+.hero-photo-wrap img{width:100%;height:320px;object-fit:cover;object-position:center 20%;transition:transform 8s ease}
+.hero-photo-wrap:hover img{transform:scale(1.04)}
+.hero-badge{position:absolute;top:16px;right:16px;background:rgba(12,14,15,.85);color:var(--gold-bright);border-radius:8px;padding:8px 14px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(8px)}
+.hero-badge span{color:rgba(255,255,255,.75);font-weight:400;display:block;font-size:.6rem;letter-spacing:.06em;margin-top:2px}
+.hero-photo-wrap::after{display:none}
+
+/* Lead card */
+.hero-card{background:var(--white);border:1px solid var(--paper-3);border-radius:0 0 14px 14px;border-top:none;padding:28px 32px 32px;width:100%;max-width:430px;box-shadow:0 28px 72px rgba(12,14,15,.07);opacity:0;animation:fadeUp .9s var(--ease) 3s forwards;position:relative}
+.hero-card::before{content:'';position:absolute;top:0;left:24px;right:24px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+.card-headline{font-family:var(--f-serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:5px}
+.card-sub{font-size:.83rem;color:var(--smoke);margin-bottom:22px;line-height:1.5}
+.form-field{margin-bottom:14px}
+.form-field label{display:block;font-size:.68rem;font-weight:600;color:var(--smoke);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.form-field input,.form-field select{width:100%;border:1.5px solid var(--paper-3);background:var(--cream);border-radius:var(--r);padding:12px 15px;color:var(--ink);font-family:var(--f-sans);font-size:.93rem;outline:none;transition:border-color .3s,box-shadow .3s,background .3s;appearance:none;-webkit-appearance:none}
+.form-field input:focus,.form-field select:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim);background:var(--white)}
+.form-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8278' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:34px}
+.form-field select option{background:var(--white)}
+.card-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper);font-family:var(--f-sans);font-weight:700;font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;padding:15px;border-radius:var(--r);border:none;cursor:pointer;margin-top:18px;transition:background .3s,transform .2s,box-shadow .3s;position:relative;overflow:hidden}
+.card-btn::after{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-110%) skewX(-14deg);transition:transform .5s var(--ease)}
+.card-btn:hover::after{transform:translateX(0) skewX(-14deg)}
+.card-btn span{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
+.card-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(12,14,15,.2)}
+.card-seal{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:14px;font-size:.74rem;color:var(--smoke-l)}
+.card-seal svg{color:var(--pine-l);flex-shrink:0}
+
+/* ── PROOF STRIP ─────────────────────────── */
+.proof-strip{background:var(--white);border-top:1px solid var(--paper-3);border-bottom:1px solid var(--paper-3);padding:22px 80px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.proof-item{display:flex;align-items:center;gap:11px}
+.proof-icon{font-size:1.3rem}
+.proof-text strong{display:block;font-size:.86rem;font-weight:600;color:var(--ink)}
+.proof-text span{font-size:.73rem;color:var(--smoke)}
+
+/* ── TICKER ──────────────────────────────── */
+.ticker{background:var(--ink);padding:13px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.ticker-track{display:flex;animation:ticker 32s linear infinite;white-space:nowrap}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:inline-flex;align-items:center;gap:14px;padding:0 36px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke)}
+.ticker-item strong{color:var(--gold-bright)}
+.ticker-sep{color:rgba(255,255,255,.14)}
+
+/* ── SECTIONS BASE ───────────────────────── */
+.section{padding:120px 80px}
+.section-inner{max-width:var(--max);margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.tag::before{content:'';display:block;width:20px;height:1px;background:var(--gold)}
+.sec-title{font-family:var(--f-serif);font-size:clamp(2.2rem,4vw,3.8rem);font-weight:700;line-height:1.05;color:var(--ink);margin-bottom:20px}
+.sec-title em{font-style:italic;font-weight:300;color:var(--gold)}
+.sec-sub{font-size:1.05rem;color:var(--smoke);max-width:580px;line-height:1.78}
+
+/* ── PROBLEM ─────────────────────────────── */
+#problem{background:var(--ink)}
+#problem .tag{color:var(--gold-bright)}
+#problem .tag::before{background:var(--gold-bright)}
+#problem .sec-title{color:var(--paper)}
+#problem .sec-title em{color:var(--gold-bright)}
+#problem .sec-sub{color:var(--smoke-l)}
+.problem-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:64px}
+.problem-list{display:flex;flex-direction:column;gap:1px}
+.prob-item{display:flex;align-items:flex-start;gap:20px;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:padding .3s var(--ease)}
+.prob-item:hover{padding-left:8px}
+.prob-n{font-size:.68rem;color:var(--gold);letter-spacing:.1em;min-width:26px;margin-top:4px}
+.prob-body h4{font-weight:600;font-size:.98rem;color:var(--paper);margin-bottom:6px}
+.prob-body p{font-size:.87rem;color:var(--smoke-l);line-height:1.62}
+.prob-visual{position:sticky;top:120px}
+.prob-cost-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:40px 32px;position:relative;overflow:hidden}
+.prob-cost-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.prob-cost-title{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke-l);margin-bottom:32px}
+.cost-vs{display:flex;flex-direction:column;gap:20px}
+.cost-row-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.cost-row-name{font-size:.8rem;color:var(--smoke-l);font-weight:500}
+.cost-row-val{font-family:var(--f-serif);font-size:1.3rem;font-weight:700;color:var(--paper)}
+.cost-row-val.danger{color:#e57373}.cost-row-val.safe{color:#81c995}
+.cost-bar-bg{background:rgba(255,255,255,.07);border-radius:2px;height:8px;overflow:hidden}
+.cost-bar-fill{height:100%;border-radius:2px;width:0;transition:width 2s var(--ease)}
+.fill-safe{background:linear-gradient(90deg,var(--pine-l),#4caf7d)}
+.fill-danger{background:linear-gradient(90deg,#c62828,#ef5350)}
+.cost-divider{display:flex;align-items:center;gap:12px;margin:8px 0}
+.cost-divider::before,.cost-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.06)}
+.cost-divider span{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--smoke)}
+.cost-saving{margin-top:28px;padding:20px;background:rgba(184,134,11,.08);border:1px solid rgba(184,134,11,.2);border-radius:8px;text-align:center}
+.cost-saving-num{font-family:var(--f-serif);font-size:2.4rem;font-weight:700;color:var(--gold-bright);line-height:1}
+.cost-saving-label{font-size:.78rem;color:var(--smoke-l);margin-top:6px}
+
+/* ── CREDIBILITY (foto bannes) ───────────── */
+#credibility{background:var(--cream);overflow:hidden}
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.cred-text-col{padding:88px 72px 88px 80px;display:flex;flex-direction:column;justify-content:center}
+.cred-photo-col{position:relative;overflow:hidden}
+.cred-photo-col img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transition:transform 8s ease;min-height:480px}
+.cred-photo-col:hover img{transform:scale(1.04)}
+.cred-photo-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,14,15,.4) 0%,transparent 60%)}
+.cred-stat-float{position:absolute;background:var(--white);border-radius:10px;padding:12px 18px;box-shadow:0 8px 32px rgba(12,14,15,.15)}
+.csf-1{bottom:32px;left:24px}
+.csf-2{top:36px;right:24px}
+.cred-stat-num{font-family:var(--f-serif);font-size:1.8rem;font-weight:700;color:var(--gold);line-height:1}
+.cred-stat-lbl{font-size:.7rem;color:var(--smoke);margin-top:2px}
+.cred-list{display:flex;flex-direction:column;gap:16px;margin-top:30px}
+.cred-item{display:flex;align-items:flex-start;gap:15px;padding:16px 18px;background:var(--white);border:1px solid var(--paper-3);border-radius:8px;transition:border-color .3s,transform .3s var(--ease)}
+.cred-item:hover{border-color:var(--gold);transform:translateX(5px)}
+.cred-icon{font-size:1.25rem;flex-shrink:0;margin-top:2px}
+.cred-item h4{font-weight:600;font-size:.93rem;color:var(--ink);margin-bottom:3px}
+.cred-item p{font-size:.81rem;color:var(--smoke);line-height:1.55}
+
+/* ── SERVICES ────────────────────────────── */
+#services{background:var(--paper)}
+.plans-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:56px}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.plan-card{border:1px solid var(--paper-3);border-radius:14px;padding:36px 28px;background:var(--white);position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .3s}
+.plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:0;background:linear-gradient(135deg,var(--gold),var(--gold-bright));transition:height .4s var(--ease)}
+.plan-card:hover{transform:translateY(-8px);box-shadow:0 32px 72px rgba(12,14,15,.1);border-color:var(--gold)}
+.plan-card:hover::before,.plan-card.featured::before{height:3px}
+.plan-card.featured{border-color:var(--gold);background:var(--ink)}
+.plan-featured-tag{position:absolute;top:18px;right:18px;background:var(--gold-bright);color:var(--ink);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.plan-avatar{width:54px;height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.65rem;margin-bottom:22px;background:var(--paper-2)}
+.plan-card.featured .plan-avatar{background:rgba(255,255,255,.06)}
+.plan-audience{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+.plan-card.featured .plan-audience{color:var(--gold-bright)}
+.plan-name{font-family:var(--f-serif);font-size:1.42rem;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:9px}
+.plan-card.featured .plan-name{color:var(--paper)}
+.plan-desc{font-size:.86rem;color:var(--smoke);line-height:1.65;margin-bottom:20px}
+.plan-card.featured .plan-desc{color:var(--smoke-l)}
+.plan-features{list-style:none;margin-bottom:22px;display:flex;flex-direction:column;gap:9px}
+.plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:.84rem;color:var(--smoke)}
+.plan-card.featured .plan-features li{color:var(--smoke-l)}
+.plan-features li::before{content:'—';color:var(--gold);flex-shrink:0;font-weight:700;margin-top:1px}
+.plan-divider{height:1px;background:var(--paper-3);margin-bottom:20px}
+.plan-card.featured .plan-divider{background:rgba(255,255,255,.08)}
+.plan-price-label{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke-l);margin-bottom:4px}
+.plan-price{font-family:var(--f-serif);font-size:2rem;font-weight:700;color:var(--ink);line-height:1}
+.plan-card.featured .plan-price{color:var(--gold-bright)}
+.plan-price-period{font-family:var(--f-sans);font-size:.77rem;font-weight:400;color:var(--smoke)}
+.plan-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:var(--r);font-family:var(--f-sans);font-weight:600;font-size:.81rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border:1px solid var(--paper-3);color:var(--ink);background:transparent;margin-top:16px;cursor:pointer;transition:background .3s,border-color .3s,color .3s,transform .2s}
+.plan-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff;transform:translateY(-1px)}
+.plan-card.featured .plan-btn{background:var(--gold-bright);border-color:var(--gold-bright);color:var(--ink)}
+.plan-card.featured .plan-btn:hover{background:var(--gold-l);border-color:var(--gold-l)}
+
+/* ── HOW ─────────────────────────────────── */
+#how{background:var(--cream)}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;margin-top:64px}
+.how-steps{display:flex;flex-direction:column;gap:0}
+.how-step{display:flex;align-items:flex-start;gap:22px;padding:26px 0;border-bottom:1px solid var(--paper-3)}
+.how-step:last-child{border-bottom:none}
+.step-circle{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--paper-3);display:flex;align-items:center;justify-content:center;font-family:var(--f-serif);font-size:1.3rem;font-weight:700;color:var(--gold);background:var(--white);flex-shrink:0;transition:background .3s,border-color .3s,color .3s}
+.how-step:hover .step-circle{background:var(--gold);border-color:var(--gold);color:#fff}
+.step-content h4{font-weight:600;font-size:.98rem;color:var(--ink);margin-bottom:6px;margin-top:12px}
+.step-content p{font-size:.87rem;color:var(--smoke);line-height:1.62}
+.how-visual{background:var(--white);border:1px solid var(--paper-3);border-radius:16px;padding:40px;box-shadow:0 24px 60px rgba(12,14,15,.05);position:relative;overflow:hidden}
+.how-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold-bright),transparent)}
+.how-visual-title{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke-l);margin-bottom:28px}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;align-items:flex-start;gap:14px;padding-bottom:22px;position:relative}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:15px;top:30px;width:1px;bottom:-4px;background:var(--paper-3)}
+.tl-dot{width:30px;height:30px;border-radius:50%;flex-shrink:0;border:1px solid var(--paper-3);background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:.7rem}
+.tl-time{font-size:.62rem;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
+.tl-text{font-size:.85rem;color:var(--smoke);margin-top:3px}
+
+/* ── MARKET ──────────────────────────────── */
+#market{background:var(--paper-2)}
+.market-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:64px}
+.market-points{display:flex;flex-direction:column;gap:18px}
+.mpoint{display:flex;align-items:flex-start;gap:18px;padding:20px;background:var(--white);border:1px solid var(--paper-3);border-radius:10px;transition:border-color .3s,transform .3s var(--ease)}
+.mpoint:hover{border-color:var(--gold);transform:translateX(5px)}
+.mpoint-icon{width:44px;height:44px;background:var(--paper-2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.mpoint h4{font-weight:600;font-size:.93rem;color:var(--ink);margin-bottom:4px}
+.mpoint p{font-size:.81rem;color:var(--smoke);line-height:1.58}
+.chart-wrap{background:var(--white);border:1px solid var(--paper-3);border-radius:14px;padding:32px;box-shadow:0 16px 48px rgba(12,14,15,.04)}
+.chart-wrap-title{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke-l);margin-bottom:24px}
+
+/* ── TESTIMONIALS (foto banne) ───────────── */
+#testimonials{background:var(--ink);position:relative;overflow:hidden}
+#testimonials::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(184,134,11,.06) 0%,transparent 65%);pointer-events:none}
+#testimonials .tag{color:var(--gold-bright)}
+#testimonials .tag::before{background:var(--gold-bright)}
+#testimonials .sec-title{color:var(--paper)}
+#testimonials .sec-title em{color:var(--gold-bright)}
+.testi-featured{display:grid;grid-template-columns:1fr 1fr;border-radius:16px;overflow:hidden;margin-top:52px;margin-bottom:32px;border:1px solid rgba(255,255,255,.07)}
+.testi-feat-img{position:relative;min-height:360px}
+.testi-feat-img img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+.testi-feat-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(7,9,11,.75))}
+.testi-feat-body{background:rgba(255,255,255,.04);padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
+.testi-feat-stars{color:var(--gold-bright);letter-spacing:3px;font-size:.9rem;margin-bottom:20px}
+.testi-feat-quote{font-family:var(--f-serif);font-size:1.2rem;font-weight:300;font-style:italic;color:var(--paper);line-height:1.72;margin-bottom:28px}
+.testi-feat-author{display:flex;align-items:center;gap:14px}
+.testi-feat-av{width:46px;height:46px;border-radius:50%;background:rgba(184,134,11,.15);border:1.5px solid rgba(184,134,11,.3);display:flex;align-items:center;justify-content:center;font-family:var(--f-serif);font-weight:700;font-size:1rem;color:var(--gold-bright)}
+.testi-feat-name{font-weight:600;font-size:.9rem;color:var(--paper)}
+.testi-feat-role{font-size:.77rem;color:var(--smoke-l)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:30px 26px;transition:border-color .3s,transform .3s,background .3s}
+.testi-card:hover{background:rgba(255,255,255,.07);border-color:rgba(184,134,11,.3);transform:translateY(-4px)}
+.testi-stars{color:var(--gold-bright);letter-spacing:3px;font-size:.82rem;margin-bottom:16px}
+.testi-quote{font-family:var(--f-serif);font-size:1.02rem;font-weight:300;font-style:italic;color:var(--paper);line-height:1.7;margin-bottom:22px}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-av{width:40px;height:40px;border-radius:50%;background:rgba(184,134,11,.12);border:1px solid rgba(184,134,11,.2);display:flex;align-items:center;justify-content:center;font-family:var(--f-serif);font-weight:700;font-size:.88rem;color:var(--gold-bright)}
+.testi-name{font-weight:600;font-size:.87rem;color:var(--paper)}
+.testi-role{font-size:.75rem;color:var(--smoke-l)}
+
+/* ── CTA ─────────────────────────────────── */
+#cta{background:var(--cream);padding:140px 80px;text-align:center;position:relative;overflow:hidden}
+#cta::before{content:'RESOLVE ANTES';font-family:var(--f-serif);font-size:clamp(6rem,16vw,20rem);font-weight:700;line-height:1;color:rgba(12,14,15,.03);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+.cta-inner{max-width:760px;margin:0 auto;position:relative}
+.cta-urgency{display:inline-flex;align-items:center;gap:8px;background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.2);color:var(--rust);font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:28px}
+.cta-urgency::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--rust);animation:blink 1.2s infinite}
+/* Photo strip before buttons */
+.cta-photo-strip{border-radius:16px;overflow:hidden;margin:0 auto 44px;position:relative;box-shadow:0 20px 60px rgba(12,14,15,.12)}
+.cta-photo-strip img{width:100%;height:200px;object-fit:cover;object-position:center 30%}
+.cta-photo-strip-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(12,14,15,.52));display:flex;align-items:flex-end;padding:18px 24px}
+.cta-strip-txt strong{display:block;font-family:var(--f-serif);font-size:1.25rem;color:#fff}
+.cta-strip-txt span{font-size:.79rem;color:rgba(255,255,255,.75)}
+.cta-title{font-family:var(--f-serif);font-size:clamp(2.5rem,5vw,5rem);font-weight:700;line-height:1;color:var(--ink);margin-bottom:22px}
+.cta-title em{font-style:italic;font-weight:300;color:var(--gold)}
+.cta-sub{font-size:1.05rem;color:var(--smoke);line-height:1.78;margin-bottom:44px;max-width:560px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.cta-note{margin-top:20px;font-size:.78rem;color:var(--smoke-l)}
+
+/* ── CONTACT ─────────────────────────────── */
+#contact{background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:60px}
+.contact-info{display:flex;flex-direction:column;gap:10px}
+.contact-info-intro{font-size:1rem;color:var(--smoke);line-height:1.78;margin-bottom:16px}
+.cinfo-item{display:flex;align-items:center;gap:14px;padding:15px 17px;background:var(--white);border:1px solid var(--paper-3);border-radius:8px;text-decoration:none;transition:border-color .3s,transform .3s var(--ease)}
+.cinfo-item:hover{border-color:var(--gold);transform:translateX(5px)}
+.cinfo-icon{width:40px;height:40px;background:var(--paper-2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cinfo-label{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke-l)}
+.cinfo-val{font-size:.92rem;color:var(--ink);font-weight:500;margin-top:2px}
+.cform{background:var(--white);border:1px solid var(--paper-3);border-radius:14px;padding:40px 34px;box-shadow:0 16px 48px rgba(12,14,15,.04);position:relative;overflow:hidden}
+.cform::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.cform h3{font-family:var(--f-serif);font-size:1.55rem;font-weight:700;color:var(--ink);margin-bottom:5px}
+.cform-sub{font-size:.87rem;color:var(--smoke);margin-bottom:26px}
+.cform-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cform .form-field textarea{width:100%;border:1.5px solid var(--paper-3);background:var(--cream);border-radius:var(--r);padding:12px 15px;color:var(--ink);font-family:var(--f-sans);font-size:.93rem;outline:none;transition:border-color .3s,box-shadow .3s;resize:vertical;min-height:88px}
+.cform .form-field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim)}
+.cform-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--paper);font-family:var(--f-sans);font-weight:700;font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;padding:15px;border-radius:var(--r);border:none;cursor:pointer;margin-top:4px;transition:background .3s,transform .2s;position:relative;overflow:hidden}
+.cform-btn::after{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-110%) skewX(-14deg);transition:transform .5s var(--ease)}
+.cform-btn:hover::after{transform:translateX(0) skewX(-14deg)}
+.cform-btn span{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
+.cform-btn:hover{transform:translateY(-1px)}
+#formMsg2{margin-top:12px;font-size:.84rem;text-align:center;display:none}
+#formMsg2.ok{color:var(--pine-l);display:block}
+#formMsg2.err{color:var(--rust);display:block}
+
+/* ── BUTTONS ─────────────────────────────── */
+.btn-ink{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);font-family:var(--f-sans);font-weight:600;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;padding:15px 30px;border-radius:var(--r);text-decoration:none;border:none;cursor:pointer;transition:background .3s,transform .2s,box-shadow .3s;position:relative;overflow:hidden}
+.btn-ink::after{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-110%) skewX(-14deg);transition:transform .5s var(--ease)}
+.btn-ink:hover::after{transform:translateX(0) skewX(-14deg)}
+.btn-ink span{position:relative;z-index:1;display:flex;align-items:center;gap:10px}
+.btn-ink:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(12,14,15,.2)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);font-family:var(--f-sans);font-weight:500;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;padding:14px 26px;border-radius:var(--r);text-decoration:none;border:1.5px solid var(--paper-3);cursor:pointer;transition:border-color .3s,color .3s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── FOOTER ──────────────────────────────── */
+footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:var(--max);margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:80px;margin-bottom:56px}
+.footer-brand .nav-logo-name{font-family:var(--f-serif);font-size:1.35rem;color:var(--paper)}
+.footer-brand p{font-size:.875rem;color:var(--smoke-l);line-height:1.72;margin-top:14px;max-width:320px}
+.footer-col h5{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.footer-col ul li a{font-size:.875rem;color:var(--smoke-l);text-decoration:none;transition:color .3s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p,.footer-bottom a{font-size:.78rem;color:var(--smoke);text-decoration:none}
+.footer-bottom a:hover{color:var(--gold)}
+
+/* ── WHATSAPP ────────────────────────────── */
+.wa-btn{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;text-decoration:none;padding:14px;border-radius:50%;width:56px;height:56px;font-family:var(--f-sans);font-weight:700;font-size:.81rem;box-shadow:0 8px 32px rgba(37,211,102,.3);transition:transform .3s var(--ease-back),box-shadow .3s;position:relative}
+.wa-btn:hover{transform:scale(1.06) translateY(-3px);box-shadow:0 16px 48px rgba(37,211,102,.4)}
+.wa-btn svg{width:28px;height:28px;fill:#fff;flex-shrink:0}
+.wa-label{display:none !important}
+.wa-pulse{position:absolute;top:-3px;right:-3px;width:15px;height:15px;background:#25D366;border-radius:50%;animation:waPulse 2s infinite}
+
+/* ── COOKIE & MODALS ─────────────────────── */
+.cookie-box{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);padding:20px 56px;z-index:1000;transform:translateY(100%);opacity:0;transition:transform .4s var(--ease),opacity .4s;border-top:1px solid rgba(255,255,255,.08);box-shadow:0 -4px 28px rgba(0,0,0,.15)}
+.cookie-box.active{transform:translateY(0);opacity:1}
+.cookie-content p{font-size:.88rem;line-height:1.5;margin-bottom:14px;max-width:800px;color:var(--smoke-l)}
+.cookie-content strong{color:var(--paper)}
+.cookie-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.cookie-btns button{padding:9px 16px;border:none;border-radius:5px;font-family:var(--f-sans);font-weight:600;font-size:.82rem;cursor:pointer;transition:background .25s,transform .2s}
+.btn-g{background:var(--gold);color:var(--ink)}.btn-g:hover{background:var(--gold-bright);transform:translateY(-1px)}
+.btn-o{background:transparent;border:1px solid rgba(255,255,255,.14);color:var(--paper)}.btn-o:hover{background:rgba(255,255,255,.08)}
+.cookie-link{font-size:.78rem;color:var(--gold);text-decoration:none;transition:color .3s}.cookie-link:hover{color:var(--gold-bright)}
+.cookie-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.cookie-modal.active{opacity:1;visibility:visible}
+.cookie-modal-content{background:var(--white);border-radius:12px;max-width:500px;width:92%;max-height:82vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.cookie-modal-header{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;border-bottom:1px solid var(--paper-3)}
+.cookie-modal-header h3{font-family:var(--f-serif);font-size:1.4rem;color:var(--ink);margin:0}
+.cookie-close{background:none;border:none;font-size:1.9rem;color:var(--smoke);cursor:pointer;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .25s;line-height:1}
+.cookie-close:hover{background:var(--paper-3)}
+.cookie-modal-body{padding:22px 28px}
+.cookie-option{margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--paper-3)}
+.cookie-option:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.cookie-option-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+.cookie-option-header h4{font-size:.95rem;font-weight:600;color:var(--ink);margin:0}
+.cookie-option input[type="checkbox"]{width:17px;height:17px;accent-color:var(--gold)}
+.cookie-option p{font-size:.83rem;color:var(--smoke);line-height:1.45;margin:0}
+.cookie-modal-footer{display:flex;gap:10px;flex-wrap:wrap;padding:18px 28px;border-top:1px solid var(--paper-3);justify-content:flex-end}
+.exit-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.72);z-index:2100;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.exit-modal.active{opacity:1;visibility:visible}
+.exit-modal-card{background:var(--ink);border:1px solid rgba(255,255,255,.09);border-radius:18px;max-width:500px;width:92%;padding:36px;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.exit-modal-card h3{font-family:var(--f-serif);font-size:1.75rem;color:var(--paper);margin-bottom:14px;line-height:1.2}
+.exit-modal-card p{font-size:.95rem;color:var(--smoke-l);line-height:1.78;margin-bottom:22px}
+.exit-modal-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+.exit-modal-actions button{padding:12px 20px;border-radius:8px;border:none;font-weight:700;font-family:var(--f-sans);cursor:pointer;transition:transform .2s,background .25s;font-size:.875rem}
+.exit-modal-actions button:hover{transform:translateY(-1px)}
+.exit-close{background:transparent;border:1px solid rgba(255,255,255,.14);color:var(--smoke-l)}
+.exit-contact{background:var(--gold);color:var(--ink)}
+.exit-contact:hover{background:var(--gold-bright)!important}
+.exit-note{font-size:.78rem;color:var(--smoke);margin-top:14px}
+
+/* ── REVEAL ──────────────────────────────── */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .72s var(--ease),transform .72s var(--ease)}
+.reveal.up{opacity:1;transform:translateY(0)}
+.reveal-l{opacity:0;transform:translateX(-26px);transition:opacity .72s var(--ease),transform .72s var(--ease)}
+.reveal-l.up{opacity:1;transform:translateX(0)}
+.reveal-r{opacity:0;transform:translateX(26px);transition:opacity .72s var(--ease),transform .72s var(--ease)}
+.reveal-r.up{opacity:1;transform:translateX(0)}
+
+/* ── MOBILE ──────────────────────────────── */
+@media(max-width:1024px){
+  nav{padding:16px 24px}
+  nav.anchored{padding:12px 24px}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(250,247,242,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;gap:24px;z-index:499}
+  .nav-links.open a{font-size:1.1rem}
+  .nav-burger{display:flex}
+  #hero{grid-template-columns:1fr}
+  .hero-left{padding:130px 24px 40px;text-align:center}
+  .hero-left::after{display:none}
+  .hero-right{padding:16px 24px 72px;align-items:center}
+  .hero-photo-wrap{max-width:460px;border-radius:12px}
+  .hero-photo-wrap img{height:260px}
+  .hero-photo-wrap::after{display:none}
+  .hero-card{max-width:460px;border-radius:0 0 12px 12px}
+  .h-sub{margin-left:auto;margin-right:auto}
+  .h-btns{justify-content:center}
+  .h-trust{justify-content:center}
+  .proof-strip{padding:18px 24px;gap:20px}
+  .cred-grid{grid-template-columns:1fr}
+  .cred-photo-col{min-height:300px}
+  .cred-text-col{padding:40px 24px}
+  .csf-2{display:none}
+  .plans-header{grid-template-columns:1fr}
+  .plans-grid{grid-template-columns:1fr}
+  .problem-layout,.market-layout,.how-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .prob-visual{position:static}
+  .testi-featured{grid-template-columns:1fr}
+  .testi-feat-img{min-height:220px;max-height:260px}
+  .testi-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:36px}
+  .section{padding:80px 24px}
+  footer{padding:60px 24px 32px}
+  #cta{padding:100px 24px}
+  body{cursor:auto}
+  #cur,#cur-ring{display:none}
+  .wa-btn{padding:12px;width:48px;height:48px}
+}
+@media(max-width:640px){
+  .cookie-box{padding:16px 20px}
+  .cookie-btns{flex-direction:column}
+  .testi-feat-body{padding:28px 22px}
+}
+@media(max-width:480px){
+  .h-title{font-size:3.2rem}
+  .hero-card{padding:24px 20px}
+  .section{padding:64px 20px}
+  .exit-modal-actions{flex-direction:column}
+  .exit-modal-actions button{text-align:center}
+}
+</style>
 </head>
-<body class="antialiased selection:bg-indigo-500 selection:text-white">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-blur transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-2">
-                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                        <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
-                    </div>
-                    <span class="font-semibold text-lg tracking-tight">AI Architect</span>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors">Sobre</a>
-                    <a href="#portfolio" class="text-sm text-gray-400 hover:text-white transition-colors">Portfólio</a>
-                    <a href="#process" class="text-sm text-gray-400 hover:text-white transition-colors">Processo</a>
-                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm font-medium text-white">Agendar Diagnóstico</a>
-                </div>
-                
-                <button class="md:hidden text-white" id="mobile-menu-btn">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-[#0a0a0f] border-t border-white/10" id="mobile-menu">
-            <div class="px-6 py-4 space-y-4">
-                <a href="#about" class="block text-gray-400 hover:text-white">Sobre</a>
-                <a href="#portfolio" class="block text-gray-400 hover:text-white">Portfólio</a>
-                <a href="#process" class="block text-gray-400 hover:text-white">Processo</a>
-                <a href="#contact" class="block text-indigo-400 font-medium">Agendar Diagnóstico</a>
-            </div>
-        </div>
-    </nav>
+<div id="cur"></div><div id="cur-ring"></div>
+<canvas id="scene"></canvas>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden grid-pattern">
-        <div class="hero-glow"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 reveal">
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span class="text-sm text-gray-400">Disponível para novos projetos</span>
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 reveal" style="transition-delay: 100ms;">
-                Construo Plataformas<br>
-                <span class="gradient-text typing-cursor" id="typing-text">e Sistemas Escaláveis</span>
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 reveal" style="transition-delay: 200ms;">
-                Especialista em MVPs, SaaS, ERPs, Marketplaces e Sistemas Empresariais desenvolvidos com IA avançada e engenharia de prompt.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal" style="transition-delay: 300ms;">
-                <a href="#portfolio" class="btn-primary px-8 py-4 rounded-full text-base font-medium text-white flex items-center gap-2">
-                    Ver Projetos
-                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
-                </a>
-                <a href="#contact" class="btn-secondary px-8 py-4 rounded-full text-base font-medium text-white flex items-center gap-2">
-                    Agendar Diagnóstico Estratégico
-                    <i data-lucide="calendar" class="w-4 h-4"></i>
-                </a>
-            </div>
-            
-            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto reveal" style="transition-delay: 400ms;">
-                <div class="text-center">
-                    <div class="stat-number text-4xl mb-2">70%</div>
-                    <div class="text-sm text-gray-500">Redução no tempo de dev</div>
-                </div>
-                <div class="text-center">
-                    <div class="stat-number text-4xl mb-2">5+</div>
-                    <div class="text-sm text-gray-500">Plataformas em operação</div>
-                </div>
-                <div class="text-center">
-                    <div class="stat-number text-4xl mb-2">2</div>
-                    <div class="text-sm text-gray-500">Países atendidos</div>
-                </div>
-                <div class="text-center">
-                    <div class="stat-number text-4xl mb-2">7-15</div>
-                    <div class="text-sm text-gray-500">Dias para MVP</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-600"></i>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                        Arquitetura de sistemas<br>
-                        <span class="text-indigo-400">potencializada por IA</span>
-                    </h2>
-                    <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
-                        <p>
-                            Experiência comprovada na criação de múltiplas plataformas complexas que operam em escala no Brasil e Portugal. Combino arquitetura de software robusta com Inteligência Artificial de ponta para entregar sistemas que transcendem expectativas.
-                        </p>
-                        <p>
-                            Minha abordagem reduz o tempo de desenvolvimento tradicional em até 70%, mantendo padrões enterprise de qualidade, segurança e escalabilidade. Cada projeto é arquitetado para crescer junto com seu negócio.
-                        </p>
-                        <p>
-                            Especialização em transformar conceitos abstratos em produtos digitais tangíveis, com foco obsessivo em performance, UX estratégica e arquitetura modular que permite evolução contínua.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-10 flex flex-wrap gap-3">
-                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">AI Architecture</span>
-                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">System Design</span>
-                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">Prompt Engineering</span>
-                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">Cloud Infrastructure</span>
-                        <span class="tech-badge px-4 py-2 rounded-full text-sm text-indigo-300">API Design</span>
-                    </div>
-                </div>
-                
-                <div class="relative reveal">
-                    <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur-3xl opacity-20"></div>
-                    <div class="relative bg-[#12121a] border border-white/10 rounded-3xl p-8 floating">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-[#1a1a25] rounded-2xl p-6 border border-white/5">
-                                <i data-lucide="zap" class="w-8 h-8 text-yellow-500 mb-4"></i>
-                                <h3 class="font-semibold mb-2">Velocidade</h3>
-                                <p class="text-sm text-gray-500">MVPs operacionais em tempo recorde sem comprometer qualidade</p>
-                            </div>
-                            <div class="bg-[#1a1a25] rounded-2xl p-6 border border-white/5 mt-8">
-                                <i data-lucide="shield" class="w-8 h-8 text-green-500 mb-4"></i>
-                                <h3 class="font-semibold mb-2">Escalabilidade</h3>
-                                <p class="text-sm text-gray-500">Arquitetura preparada para milhões de usuários</p>
-                            </div>
-                            <div class="bg-[#1a1a25] rounded-2xl p-6 border border-white/5">
-                                <i data-lucide="brain" class="w-8 h-8 text-purple-500 mb-4"></i>
-                                <h3 class="font-semibold mb-2">IA Nativa</h3>
-                                <p class="text-sm text-gray-500">Integração avançada de modelos LLM e ML</p>
-                            </div>
-                            <div class="bg-[#1a1a25] rounded-2xl p-6 border border-white/5 mt-8">
-                                <i data-lucide="globe" class="w-8 h-8 text-blue-500 mb-4"></i>
-                                <h3 class="font-semibold mb-2">Global</h3>
-                                <p class="text-sm text-gray-500">Operação multi-país com compliance local</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-32 bg-[#12121a] relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Portfólio de Projetos</h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-                    Sistemas complexos em operação que demonstram capacidade técnica e visão estratégica
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal">
-                    <div class="project-card-image h-48 flex items-center justify-center">
-                        <div class="text-center">
-                            <i data-lucide="calculator" class="w-16 h-16 text-indigo-500 mx-auto mb-2 opacity-80"></i>
-                            <span class="text-sm text-gray-500">Interface Preview</span>
-                        </div>
-                    </div>
-                   <div class="p-6">
-    <h3 class="text-xl font-bold mb-2">Obra Calc Pro</h3>
-    <p class="text-gray-400 text-sm mb-4">
-        Calculadora inteligente de materiais de construção com precisão técnica avançada, orçamentação automatizada e gestão de custos integrada.
-    </p>
-    <div class="flex flex-wrap gap-2 mb-6">
-        <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">React</span>
-        <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Python</span>
-        <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">AI Predict</span>
-    </div>
-
-    <a href="https://wandering-obra-calc-pro.base44.app" target="_blank" class="block w-full">
-        <button class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
-            Ver Plataforma
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-        </button>
-    </a>
+<div id="loader">
+  <div class="ld-logo">Rafael <span>Soares</span></div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
+  <div class="ld-city">Goiânia · Aparecida de Goiânia — GO</div>
 </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal" style="transition-delay: 100ms;">
-                    <div class="project-card-image h-48 flex items-center justify-center">
-                        <div class="text-center">
-                            <i data-lucide="users" class="w-16 h-16 text-purple-500 mx-auto mb-2 opacity-80"></i>
-                            <span class="text-sm text-gray-500">Interface Preview</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Moob Serviços</h3>
-                        <p class="text-gray-400 text-sm mb-4">
-                            Marketplace de serviços com matching inteligente, geolocalização avançada e sistema de pagamentos escrow automatizado.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Node.js</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">PostgreSQL</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">AWS</span>
-                        </div>
-                        <a href="https://moob-servicos.base44.app" target="_blank" 
-   class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
-    Ver Plataforma
-    <i data-lucide="external-link" class="w-4 h-4"></i>
+
+<div class="site">
+
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-name">Rafael <em>Soares</em></span>
+    <span class="nav-logo-sub">Manutenção Preventiva · GO</span>
+  </a>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="#services">Planos</a></li>
+    <li><a href="#how">Como Funciona</a></li>
+    <li><a href="#market">Mercado</a></li>
+    <li><a href="#testimonials">Depoimentos</a></li>
+    <li><a href="#contact" class="nav-cta-link">Orçamento Grátis</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="h-kicker"><span class="h-kicker-dot"></span>Goiânia &amp; Aparecida · Desde 2018</div>
+    <h1 class="h-title">
+      <span class="h-title-line"><span class="h-title-word">Resolve</span></span>
+      <span class="h-title-line"><span class="h-title-word"><em>Antes</em></span></span>
+      <span class="h-title-line"><span class="h-title-word">de Quebrar.</span></span>
+    </h1>
+    <p class="h-sub">Chega de pagar <strong>5× mais caro</strong> em emergências.<br>Planos de manutenção preventiva com contrato, garantia e um profissional de <strong>confiança real</strong> — para residências, imobiliárias e condomínios.</p>
+    <div class="h-btns">
+      <a href="https://wa.me/5562985558320?text=Olá%20Rafael!%20Vi%20o%20site%20e%20quero%20conhecer%20os%20planos." class="btn-ink" target="_blank" rel="noopener">
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Quero meu Plano</span>
+      </a>
+      <a href="#services" class="btn-ghost">Ver Planos →</a>
+    </div>
+    <div class="h-trust">
+      <div class="h-trust-item"><div class="h-trust-num"><span class="cnt" data-t="200">0</span><sup>+</sup></div><div class="h-trust-label">Imóveis<br>Atendidos</div></div>
+      <div class="h-trust-div"></div>
+      <div class="h-trust-item"><div class="h-trust-num"><span class="cnt" data-t="97">0</span><sup>%</sup></div><div class="h-trust-label">Renovam<br>Contrato</div></div>
+      <div class="h-trust-div"></div>
+      <div class="h-trust-item"><div class="h-trust-num"><span class="cnt" data-t="5">0</span><sup>×</sup></div><div class="h-trust-label">Mais barato<br>que emergência</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- banne.png: close-up profissional no HERO = primeiro impacto visual, gera confiança imediata -->
+    <div class="hero-photo-wrap">
+      <img src="img/banne.png" alt="Rafael Soares — Especialista em Manutenção Preventiva em Goiânia" loading="eager"/>
+      <div class="hero-badge">Profissional Certificado<span>15 anos de experiência</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="card-headline">Diagnóstico Gratuito</div>
+      <div class="card-sub">Descubra o plano ideal em 2 minutos. Sem compromisso.</div>
+      <div class="form-field"><label>Seu Nome</label><input type="text" id="hN" placeholder="Ex: Maria Silva" autocomplete="name"/></div>
+      <div class="form-field"><label>WhatsApp</label><input type="tel" id="hP" placeholder="(62) 99999-9999" autocomplete="tel"/></div>
+      <div class="form-field"><label>Tipo de Imóvel</label>
+        <select id="hT"><option value="">Selecione...</option><option value="Residência / Casa">Residência / Casa</option><option value="Apartamento">Apartamento</option><option value="Imobiliária (vários imóveis)">Imobiliária (vários imóveis)</option><option value="Condomínio / Prédio">Condomínio / Prédio</option></select>
+      </div>
+      <button class="card-btn" onclick="heroLead()"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Solicitar Diagnóstico Grátis</span></button>
+      <div class="card-seal"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Atendemos Goiânia e Aparecida · Resposta em até 2h</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item"><div class="proof-icon">⚡</div><div class="proof-text"><strong>Resposta em até 2h</strong><span>em dias úteis</span></div></div>
+  <div class="proof-item"><div class="proof-icon">📋</div><div class="proof-text"><strong>Contrato + Garantia</strong><span>por escrito, sempre</span></div></div>
+  <div class="proof-item"><div class="proof-icon">📍</div><div class="proof-text"><strong>Goiânia e Aparecida</strong><span>atendimento local</span></div></div>
+  <div class="proof-item"><div class="proof-icon">🏆</div><div class="proof-text"><strong>97% renovam contrato</strong><span>satisfação garantida</span></div></div>
+  <div class="proof-item"><div class="proof-icon">💰</div><div class="proof-text"><strong>5× mais barato</strong><span>que serviço emergencial</span></div></div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-track" id="tickerTrack"></div></div>
+
+<!-- PROBLEM -->
+<section id="problem" class="section">
+  <div class="section-inner">
+    <div class="tag reveal">O Problema Real</div>
+    <h2 class="sec-title reveal">O mercado de reformas<br>em Goiânia está <em>quebrado</em></h2>
+    <div class="problem-layout">
+      <div class="problem-list">
+        <div class="prob-item reveal"><div class="prob-n">01</div><div class="prob-body"><h4>Emergência custa 5× mais</h4><p>Um reparo preventivo de R$ 200 vira um prejuízo de R$ 1.000+ quando explode às 23h ou no fim de semana.</p></div></div>
+        <div class="prob-item reveal"><div class="prob-n">02</div><div class="prob-body"><h4>Profissionais sem garantia e sem prazo</h4><p>O mercado goiano é dominado por informais que somem quando o problema retorna — sem contrato, sem responsabilidade.</p></div></div>
+        <div class="prob-item reveal"><div class="prob-n">03</div><div class="prob-body"><h4>Casas não foram feitas para idosos</h4><p>A população 60+ cresce 3× mais rápido em Goiânia. Filhos preocupados precisam urgentemente de segurança para os pais.</p></div></div>
+        <div class="prob-item reveal"><div class="prob-n">04</div><div class="prob-body"><h4>Imóvel vago = prejuízo certo</h4><p>Imobiliárias perdem locações porque não têm parceiro técnico para deixar o imóvel "pronto para morar" em dias.</p></div></div>
+        <div class="prob-item reveal"><div class="prob-n">05</div><div class="prob-body"><h4>Nova lei de inspeção predial — GO</h4><p>Síndicos de Goiânia estão sob pressão legal para apresentar laudos técnicos. Pouquíssimos profissionais habilitados.</p></div></div>
+      </div>
+      <div class="prob-visual reveal-r">
+        <div class="prob-cost-card">
+          <div class="prob-cost-title">Análise de Custo — 12 meses</div>
+          <div class="cost-vs">
+            <div class="cost-row"><div class="cost-row-label"><span class="cost-row-name">Com Plano Preventivo</span><span class="cost-row-val safe">R$ 3.000</span></div><div class="cost-bar-bg"><div class="cost-bar-fill fill-safe" id="bSafe" data-w="24"></div></div></div>
+            <div class="cost-divider"><span>vs</span></div>
+            <div class="cost-row"><div class="cost-row-label"><span class="cost-row-name">Sem Plano (Emergências)</span><span class="cost-row-val danger">R$ 12.600</span></div><div class="cost-bar-bg"><div class="cost-bar-fill fill-danger" id="bDanger" data-w="100"></div></div></div>
+          </div>
+          <div class="cost-saving"><div class="cost-saving-num">R$ 9.600</div><div class="cost-saving-label">de economia média anual com o plano preventivo</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY — bannes.png (foto panorâmica/escritório) usada aqui para humanizar marca e demonstrar autoridade -->
+<section id="credibility" style="background:var(--cream);overflow:hidden">
+  <div style="max-width:100%">
+    <div class="cred-grid">
+      <div class="cred-text-col">
+        <div class="tag reveal">Por que Rafael Soares?</div>
+        <h2 class="sec-title reveal">15 anos resolvendo <em>o que outros deixam pra depois</em></h2>
+        <p class="sec-sub reveal" style="margin-bottom:0">Experiência real construída em campo — com cursos SENAI, execução em imóveis residenciais, comerciais e condomínios na Grande Goiânia.</p>
+        <div class="cred-list">
+          <div class="cred-item reveal"><div class="cred-icon">📜</div><div><h4>Profissional Certificado (SENAI)</h4><p>Formação técnica reconhecida em elétrica, hidráulica, reformas e manutenção predial.</p></div></div>
+          <div class="cred-item reveal"><div class="cred-icon">🔒</div><div><h4>Contrato + Garantia por Escrito</h4><p>Todos os serviços com escopo definido, prazo garantido e 90 a 365 dias de cobertura.</p></div></div>
+          <div class="cred-item reveal"><div class="cred-icon">📊</div><div><h4>Relatório Mensal no WhatsApp</h4><p>Transparência total: fotos, check-list e resumo de tudo que foi feito no seu imóvel.</p></div></div>
+          <div class="cred-item reveal"><div class="cred-icon">🏠</div><div><h4>+200 Imóveis Atendidos em Goiânia</h4><p>Residências, condomínios e carteiras imobiliárias — experiência comprovada na região.</p></div></div>
+        </div>
+      </div>
+      <div class="cred-photo-col reveal-r">
+        <img src="img/bannes.png" alt="Rafael Soares em seu escritório — Especialista em Manutenção Preventiva Goiânia" loading="lazy"/>
+        <div class="cred-photo-overlay"></div>
+        <div class="cred-stat-float csf-1"><div class="cred-stat-num">97%</div><div class="cred-stat-lbl">Renovam contrato</div></div>
+        <div class="cred-stat-float csf-2"><div class="cred-stat-num">200+</div><div class="cred-stat-lbl">Imóveis atendidos</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="plans-header">
+      <div class="reveal-l"><div class="tag">Nossos Planos</div><h2 class="sec-title">Escolha o plano<br>ideal para <em>você</em></h2></div>
+      <div class="reveal-r"><p class="sec-sub">Pare de pagar caro por emergências. Com um plano de assinatura você tem previsibilidade, segurança e um profissional de confiança sempre disponível.</p></div>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card reveal">
+        <div class="plan-avatar">👴</div><div class="plan-audience">Para Família / Idosos</div>
+        <h3 class="plan-name">Assinatura Residencial Sênior</h3>
+        <p class="plan-desc">Moradia segura e tranquilidade para toda a família. Visita mensal com check-up completo e pequenos reparos incluídos.</p>
+        <ul class="plan-features"><li>Visita mensal de check-up completo</li><li>Revisão de iluminação e elétrica</li><li>Verificação de vazamentos</li><li>Ajustes de acessibilidade</li><li>Desobstrução de calhas</li><li>Relatório mensal por WhatsApp</li></ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 150 <span class="plan-price-period">/ mês</span></div>
+        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20no%20Plano%20Residencial%20Sênior." class="plan-btn" target="_blank" rel="noopener">Solicitar Plano →</a>
+      </div>
+      <div class="plan-card featured reveal">
+        <div class="plan-featured-tag">Mais Popular</div>
+        <div class="plan-avatar">🏢</div><div class="plan-audience">Para Imobiliárias</div>
+        <h3 class="plan-name">Retainer Imobiliário</h3>
+        <p class="plan-desc">Um parceiro único para toda sua carteira. Gestão completa — entrada, saída de inquilinos e manutenção preventiva.</p>
+        <ul class="plan-features"><li>Gestão de toda a carteira</li><li>Reparos de entrada e saída</li><li>Manutenção preventiva mensal</li><li>Relatório fotográfico detalhado</li><li>Prioridade no atendimento</li><li>Orçamentos em até 4 horas</li></ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 50 <span class="plan-price-period">/ imóvel / mês</span></div>
+        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20no%20Retainer%20Imobiliário." class="plan-btn" target="_blank" rel="noopener">Falar com Rafael →</a>
+      </div>
+      <div class="plan-card reveal">
+        <div class="plan-avatar">🏗️</div><div class="plan-audience">Para Condomínios</div>
+        <h3 class="plan-name">Zeladoria Técnica Predial</h3>
+        <p class="plan-desc">Responsabilidade técnica pela saúde estrutural do seu edifício — laudos, cronograma e conformidade legal.</p>
+        <ul class="plan-features"><li>Inspeção predial periódica</li><li>Plano de manutenção anual</li><li>Laudos técnicos assinados</li><li>Conformidade com lei GO</li><li>Gestão de fornecedores</li><li>Reunião mensal com síndico</li></ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 1.500 <span class="plan-price-period">/ mês</span></div>
+        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20na%20Zeladoria%20Técnica%20Predial." class="plan-btn" target="_blank" rel="noopener">Solicitar Plano →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" class="section">
+  <div class="section-inner">
+    <div class="tag reveal">Como Funciona</div>
+    <h2 class="sec-title reveal">Simples. Rápido.<br><em>Sem burocracia.</em></h2>
+    <div class="how-grid">
+      <div class="how-steps">
+        <div class="how-step reveal"><div class="step-circle">1</div><div class="step-content"><h4>Entre em Contato</h4><p>Mande mensagem no WhatsApp ou preencha o formulário. Sem fila — resposta em até 2 horas.</p></div></div>
+        <div class="how-step reveal"><div class="step-circle">2</div><div class="step-content"><h4>Diagnóstico Gratuito</h4><p>Visita técnica completa ao seu imóvel, identificando pontos de atenção antes que virem problemas.</p></div></div>
+        <div class="how-step reveal"><div class="step-circle">3</div><div class="step-content"><h4>Plano Personalizado</h4><p>Proposta clara: escopo definido, valor fixo mensal, contrato formal e garantia por escrito.</p></div></div>
+        <div class="how-step reveal"><div class="step-circle">4</div><div class="step-content"><h4>Proteção Contínua</h4><p>Assinatura ativa e você relaxa. Relatórios mensais, transparência total e suporte prioritário.</p></div></div>
+      </div>
+      <div class="how-visual reveal-r">
+        <div class="how-visual-title">Cronograma de Atendimento</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot">📲</div><div><div class="tl-time">Dia 1 · 0–2h</div><div class="tl-text">Primeiro contato e confirmação do agendamento</div></div></div>
+          <div class="tl-item"><div class="tl-dot">🔍</div><div><div class="tl-time">Dia 2-3 · Diagnóstico</div><div class="tl-text">Visita técnica gratuita e relatório fotográfico</div></div></div>
+          <div class="tl-item"><div class="tl-dot">📋</div><div><div class="tl-time">Dia 4 · Proposta</div><div class="tl-text">Plano personalizado com valor fixo e contrato</div></div></div>
+          <div class="tl-item"><div class="tl-dot">🛡️</div><div><div class="tl-time">Mensal · Proteção</div><div class="tl-text">Check-up recorrente, relatório e suporte prioritário</div></div></div>
+          <div class="tl-item"><div class="tl-dot">📈</div><div><div class="tl-time">Anual · Análise</div><div class="tl-text">Revisão do plano e relatório de economia gerada</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section id="market" class="section">
+  <div class="section-inner">
+    <div class="market-layout">
+      <div>
+        <div class="tag reveal">Oportunidade de Mercado</div>
+        <h2 class="sec-title reveal">Goiânia cresce.<br>A demanda <em>também.</em></h2>
+        <p class="sec-sub reveal" style="margin-bottom:32px">O mercado de manutenção preventiva em Goiânia e Aparecida ainda é pouco estruturado, apesar do crescimento imobiliário acelerado.</p>
+        <div class="market-points">
+          <div class="mpoint reveal"><div class="mpoint-icon">👵</div><div><h4>60+ anos: maior poder aquisitivo</h4><p>Idosos em Goiânia crescem 3× mais rápido — e detêm o maior poder aquisitivo acumulado.</p></div></div>
+          <div class="mpoint reveal"><div class="mpoint-icon">🔑</div><div><h4>+300 imobiliárias ativas em Goiânia</h4><p>Todas precisam de um parceiro técnico único e confiável para gestão de manutenção.</p></div></div>
+          <div class="mpoint reveal"><div class="mpoint-icon">⚖️</div><div><h4>Lei de inspeção predial obrigatória</h4><p>Síndicos goianos sob pressão legal. Pouquíssimos profissionais habilitados para atender.</p></div></div>
+        </div>
+      </div>
+      <div class="chart-wrap reveal-r">
+        <div class="chart-wrap-title">Projeção de Economia — Plano Preventivo vs Emergencial</div>
+        <canvas id="ecoChart" height="300"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — banne.png (close-up) usada no depoimento principal para maximizar reconhecimento de rosto e humanizar -->
+<section id="testimonials" class="section">
+  <div class="section-inner">
+    <div class="tag reveal">Depoimentos</div>
+    <h2 class="sec-title reveal">Quem já <em>confia</em><br>no Rafael</h2>
+    <div class="testi-featured reveal">
+      <div class="testi-feat-img">
+        <img src="img/banne.png" alt="Rafael Soares — Manutenção Preventiva Goiânia" loading="lazy"/>
+      </div>
+      <div class="testi-feat-body">
+        <div class="testi-feat-stars">★★★★★</div>
+        <p class="testi-feat-quote">"Gerencio 47 imóveis alugados em Aparecida. Antes era um caos completo. Hoje tenho um número único para ligar, orçamento em horas e imóvel pronto para o próximo inquilino em dias. O Rafael transformou minha operação."</p>
+        <div class="testi-feat-author">
+          <div class="testi-feat-av">CP</div>
+          <div><div class="testi-feat-name">Carla P.</div><div class="testi-feat-role">Gestora Imobiliária · Aparecida de Goiânia</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Minha mãe tem 72 anos e mora sozinha no Setor Bueno. Desde que contratei o plano sênior, consigo trabalhar sossegado. O Rafael resolve tudo e me manda relatório todo mês."</p><div class="testi-author"><div class="testi-av">MF</div><div><div class="testi-name">Marcelo F.</div><div class="testi-role">Empresário · Setor Bueno, Goiânia</div></div></div></div>
+      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Como síndico, tinha o pesadelo da inspeção predial. Rafael assumiu tudo — laudo, plano de manutenção e apresentou para os condôminos. Profissionalismo que nunca vi no mercado."</p><div class="testi-author"><div class="testi-av">JR</div><div><div class="testi-name">José R.</div><div class="testi-role">Síndico · Condomínio Jardins, Goiânia</div></div></div></div>
+      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Contratei o plano residencial para meus pais idosos. A tranquilidade que tenho hoje é indescritível. Saber que tem alguém de confiança cuidando deles todo mês vale cada centavo."</p><div class="testi-author"><div class="testi-av">LA</div><div><div class="testi-name">Luciana A.</div><div class="testi-role">Filha de assinante · Jardim América, Goiânia</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — bannes.png antes dos botões: foto ampla reforça autoridade no momento decisivo de conversão -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="cta-urgency">⏰ Vagas limitadas em Goiânia</div>
+    <div class="cta-photo-strip reveal">
+      <img src="img/bannes.png" alt="Rafael Soares — Especialista Certificado em Manutenção Preventiva Goiânia" loading="lazy"/>
+      <div class="cta-photo-strip-overlay">
+        <div class="cta-strip-txt"><strong>Rafael Soares · Especialista Certificado</strong><span>Goiânia e Aparecida de Goiânia · Desde 2018</span></div>
+      </div>
+    </div>
+    <h2 class="cta-title reveal">Pare de pagar caro<br>por <em>emergências evitáveis</em></h2>
+    <p class="cta-sub reveal">A próxima vez que um cano estourar às 23h ou o teto começar a vazar na chuva, você vai se lembrar desse momento. Não deixe para depois.</p>
+    <div class="cta-btns reveal">
+      <a href="https://wa.me/5562985558320?text=Olá!%20Quero%20contratar%20um%20plano%20de%20manutenção%20preventiva." class="btn-ink" target="_blank" rel="noopener">
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Falar no WhatsApp Agora</span>
+      </a>
+      <a href="#contact" class="btn-ghost">Enviar Mensagem</a>
+    </div>
+    <p class="cta-note">✓ Diagnóstico gratuito &nbsp;·&nbsp; ✓ Sem taxa de adesão &nbsp;·&nbsp; ✓ Atendemos toda Goiânia e Aparecida</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="tag reveal">Contato</div>
+    <h2 class="sec-title reveal">Vamos <em>conversar?</em></h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal-l">
+        <p class="contact-info-intro">Atendemos Goiânia e Aparecida de Goiânia. Entre em contato pelo canal que preferir — respondemos em até 2 horas em dias úteis.</p>
+        <a href="https://wa.me/5562985558320" class="cinfo-item" target="_blank" rel="noopener"><div class="cinfo-icon">💬</div><div><div class="cinfo-label">WhatsApp</div><div class="cinfo-val">(62) 98555-8320</div></div></a>
+        <a href="tel:+5562985558320" class="cinfo-item"><div class="cinfo-icon">📞</div><div><div class="cinfo-label">Telefone</div><div class="cinfo-val">(62) 98555-8320</div></div></a>
+        <a href="mailto:rafaelsoaresproo@gmail.com" class="cinfo-item"><div class="cinfo-icon">✉️</div><div><div class="cinfo-label">E-mail</div><div class="cinfo-val">rafaelsoaresproo@gmail.com</div></div></a>
+        <div class="cinfo-item" style="cursor:default"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">Área de Atendimento</div><div class="cinfo-val">Goiânia e Aparecida de Goiânia — GO</div></div></div>
+        <div class="cinfo-item" style="cursor:default"><div class="cinfo-icon">🕐</div><div><div class="cinfo-label">Horário</div><div class="cinfo-val">Seg–Sex 7h–18h · Sáb 8h–13h</div></div></div>
+      </div>
+      <div class="cform reveal-r">
+        <h3>Solicitar Orçamento</h3>
+        <p class="cform-sub">Preencha e retornamos em até 2 horas.</p>
+        <form id="cForm" onsubmit="submitCForm(event)">
+          <div class="cform-row">
+            <div class="form-field"><label>Nome*</label><input type="text" name="nome" required placeholder="Seu nome"/></div>
+            <div class="form-field"><label>WhatsApp*</label><input type="tel" name="whatsapp" required placeholder="(62) 99999-9999"/></div>
+          </div>
+          <div class="form-field"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com"/></div>
+          <div class="form-field"><label>Tipo de Imóvel*</label><select name="tipo" required><option value="">Selecione...</option><option>Residência / Casa</option><option>Apartamento</option><option>Imobiliária (vários imóveis)</option><option>Condomínio / Prédio</option></select></div>
+          <div class="form-field"><label>Bairro / Cidade</label><input type="text" name="bairro" placeholder="Ex: Setor Bueno, Goiânia"/></div>
+          <div class="form-field"><label>Descreva sua necessidade</label><textarea name="mensagem" placeholder="Conte sobre o que precisa..."></textarea></div>
+          <button type="submit" class="cform-btn"><span>Enviar Solicitação →</span></button>
+          <div id="formMsg2"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="nav-logo-name">Rafael <em>Soares</em></span><p>Especialista em manutenção preventiva residencial e predial em Goiânia e Aparecida de Goiânia. Profissionalismo, garantia e previsibilidade.</p></div>
+      <div class="footer-col"><h5>Planos</h5><ul><li><a href="#services">Residencial Sênior</a></li><li><a href="#services">Retainer Imobiliário</a></li><li><a href="#services">Zeladoria Técnica</a></li></ul></div>
+      <div class="footer-col"><h5>Institucional</h5><ul><li><a href="sobre.html">Sobre a Empresa</a></li><li><a href="etica.html">Código de Ética</a></li><li><a href="como-funciona.html">Como Funciona</a></li><li><a href="garantia.html">Garantia</a></li><li><a href="termos.html">Termos de Uso</a></li><li><a href="privacidade.html">Privacidade</a></li><li><a href="cookies.html">Cookies</a></li></ul></div>
+      <div class="footer-col"><h5>Suporte</h5><ul><li><a href="faq.html">Perguntas Frequentes</a></li><li><a href="contato.html">Fale Conosco</a></li><li><a href="orcamento.html">Solicitar Orçamento</a></li><li><a href="cancelamento.html">Cancelamento</a></li><li><a href="https://wa.me/5562985558320" target="_blank">(62) 98555-8320</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Rafael Soares Manutenção e Reformas · Goiânia, GO</p><p><a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="cookies.html">Cookies</a></p></div>
+  </div>
+</footer>
+</div>
+
+<a href="https://wa.me/5562985558320?text=Olá!%20Vi%20o%20site%20rafaelsoares.pro%20e%20quero%20saber%20mais." class="wa-btn" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-label">Falar no WhatsApp</span>
 </a>
-                    </div>
-                </div>
-                
-              <!-- Project 3 -->
-<div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal" style="transition-delay: 200ms;">
-    <div class="project-card-image h-48 flex items-center justify-center">
-        <div class="text-center">
-            <i data-lucide="map-pin" class="w-16 h-16 text-blue-500 mx-auto mb-2 opacity-80"></i>
-            <span class="text-sm text-gray-500">Interface Preview</span>
-        </div>
-    </div>
-    <div class="p-6">
-        <h3 class="text-xl font-bold mb-2">Prime Field Force</h3>
-        <p class="text-gray-400 text-sm mb-4">
-            Sistema de workforce management com rastreamento em tempo real, otimização de rotas e gestão de performance de equipes externas.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-6">
-            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">React Native</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Go</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Redis</span>
-        </div>
 
-        <a href="https://prime-field-force.base44.app" 
-           target="_blank"
-           class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
-            Ver Plataforma
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
-    </div>
+<div id="cookieBox" class="cookie-box" role="dialog" aria-live="polite">
+  <div class="cookie-content">
+    <p><strong>🍪 Privacidade e cookies</strong><br>Este site usa cookies para garantir a melhor experiência. Escolha suas preferências.</p>
+    <div class="cookie-btns"><button id="acceptEssential" type="button" class="btn-o">Apenas essenciais</button><button id="configureCookies" type="button" class="btn-g">Configurar</button><button id="acceptAll" type="button" class="btn-g">Aceitar todos</button></div>
+    <a href="cookies.html" class="cookie-link">Política de Cookies</a>
+  </div>
 </div>
-                
-                <!-- Project 4 -->
-                 <!-- 
-                <div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal">
-                    <div class="project-card-image h-48 flex items-center justify-center">
-                        <div class="text-center">
-                            <i data-lucide="building-2" class="w-16 h-16 text-green-500 mx-auto mb-2 opacity-80"></i>
-                            <span class="text-sm text-gray-500">Interface Preview</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Prime ERP Flow</h3>
-                        <p class="text-gray-400 text-sm mb-4">
-                            ERP empresarial modular com inteligência artificial para automação de processos, análise preditiva e gestão integrada de recursos.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Next.js</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Prisma</span>
-                            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">LLM Integration</span>
-                        </div>
-                        <button class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
-                            Ver Plataforma
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-                 -->
-               <!-- Project 5 -->
-<div class="card-hover bg-[#0a0a0f] rounded-2xl overflow-hidden border border-white/10 reveal" style="transition-delay: 100ms;">
-    <div class="project-card-image h-48 flex items-center justify-center">
-        <div class="text-center">
-            <i data-lucide="shopping-cart" class="w-16 h-16 text-orange-500 mx-auto mb-2 opacity-80"></i>
-            <span class="text-sm text-gray-500">Interface Preview</span>
-        </div>
+<div id="cookieModal" class="cookie-modal" role="dialog" aria-modal="true">
+  <div class="cookie-modal-content">
+    <div class="cookie-modal-header"><h3>Configurações de Cookies</h3><button id="closeModal" type="button" class="cookie-close">&times;</button></div>
+    <div class="cookie-modal-body">
+      <div class="cookie-option"><div class="cookie-option-header"><h4>Cookies Essenciais</h4><input type="checkbox" checked disabled></div><p>Necessários para o funcionamento básico. Não podem ser desabilitados.</p></div>
+      <div class="cookie-option"><div class="cookie-option-header"><h4>Cookies de Análise</h4><input type="checkbox" id="analyticsCookies"></div><p>Ajudam a entender como você usa o site.</p></div>
+      <div class="cookie-option"><div class="cookie-option-header"><h4>Cookies de Marketing</h4><input type="checkbox" id="marketingCookies"></div><p>Usados para personalizar conteúdo baseado nos seus interesses.</p></div>
     </div>
-    <div class="p-6">
-        <h3 class="text-xl font-bold mb-2">SmartCart Insights</h3>
-        <p class="text-gray-400 text-sm mb-4">
-            Sistema inteligente para supermercados com análise comportamental de clientes, otimização de layout e previsão de demanda em tempo real.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-6">
-            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">Python</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">TensorFlow</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400">IoT</span>
-        </div>
-
-        <a href="https://meek-smart-cart-ai.base44.app/" 
-           target="_blank"
-           class="w-full py-3 rounded-lg border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
-            Ver Plataforma
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
-    </div>
+    <div class="cookie-modal-footer"><button id="rejectAllModal" class="btn-o" style="color:var(--smoke)">Rejeitar todos</button><button id="savePreferences" class="btn-g">Salvar</button><button id="acceptAllModal" class="btn-g">Aceitar todos</button></div>
+  </div>
 </div>
-            </div>
-        </div>
-    </section>
+<div id="exitModal" class="exit-modal" role="dialog" aria-modal="true">
+  <div class="exit-modal-card">
+    <h3>Espere! Temos algo para você.</h3>
+    <p>Antes de sair — um plano preventivo pode evitar emergências caras. Vamos conversar agora, sem compromisso. Resposta em até 2 horas.</p>
+    <div class="exit-modal-actions"><button id="stayButton" type="button" class="exit-close">Continuar navegando</button><button id="contactExit" type="button" class="exit-contact">Quero saber mais →</button></div>
+    <p class="exit-note">✓ Diagnóstico gratuito · ✓ Sem taxa de adesão · ✓ Goiânia e Aparecida</p>
+  </div>
+</div>
 
-    <!-- Differentials Section -->
-    <section class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Diferenciais Competitivos</h2>
-                <p class="text-xl text-gray-400">Por que grandes empresas escolhem esta abordagem</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal">
-                    <div class="w-14 h-14 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="rocket" class="w-7 h-7 text-indigo-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Desenvolvimento Acelerado</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Utilização de IA para automação de código, testes e deploy contínuo, reduzindo drasticamente o time-to-market sem comprometer qualidade.
-                    </p>
-                </div>
-                
-                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal" style="transition-delay: 100ms;">
-                    <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="network" class="w-7 h-7 text-purple-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Arquitetura Complexa</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Experiência em sistemas distribuídos, microserviços e arquitetura orientada a eventos que suportam milhões de transações diárias.
-                    </p>
-                </div>
-                
-                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal" style="transition-delay: 200ms;">
-                    <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="lightbulb" class="w-7 h-7 text-blue-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Validação Rápida</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Metodologia enxuta para testar hipóteses de negócio rapidamente, pivotando quando necessário com mínimo desperdício de recursos.
-                    </p>
-                </div>
-                
-                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal">
-                    <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="clock" class="w-7 h-7 text-green-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">MVP em 7-15 Dias</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Protótipos funcionais e validáveis em tempo recorde, permitindo demonstração para investidores e early adopters imediatamente.
-                    </p>
-                </div>
-                
-                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal" style="transition-delay: 100ms;">
-                    <div class="w-14 h-14 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="layers" class="w-7 h-7 text-yellow-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Multi-setorial</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Expertise diversificada em construção civil, varejo, logística, serviços e indústria, trazendo best practices cross-industry.
-                    </p>
-                </div>
-                
-                <div class="group p-8 rounded-2xl bg-[#12121a] border border-white/10 hover:border-indigo-500/50 transition-all duration-300 reveal" style="transition-delay: 200ms;">
-                    <div class="w-14 h-14 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="cog" class="w-7 h-7 text-pink-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Engenharia de Prompt</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Domínio avançado de orquestração de LLMs, criando sistemas inteligentes que automatizam decisões complexas e análises preditivas.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" class="py-32 bg-[#12121a] relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Processo de Trabalho</h2>
-                <p class="text-xl text-gray-400">Metodologia refinada para entrega consistente</p>
-            </div>
-            
-            <div class="relative">
-                <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent md:-translate-x-1/2"></div>
-                
-                <div class="space-y-16">
-                    <!-- Step 1 -->
-                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
-                        <div class="md:w-5/12 md:text-right order-2 md:order-1">
-                            <h3 class="text-2xl font-bold mb-3">Diagnóstico Estratégico</h3>
-                            <p class="text-gray-400">
-                                Análise profunda do problema de negócio, mapeamento de stakeholders, definição de KPIs e arquitetura de informação inicial.
-                            </p>
-                        </div>
-                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-indigo-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
-                            <span class="text-2xl font-bold text-indigo-400">01</span>
-                        </div>
-                        <div class="md:w-5/12 order-3"></div>
-                    </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
-                        <div class="md:w-5/12 order-2"></div>
-                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-purple-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
-                            <span class="text-2xl font-bold text-purple-400">02</span>
-                        </div>
-                        <div class="md:w-5/12 order-3 md:order-3">
-                            <h3 class="text-2xl font-bold mb-3">Arquitetura da Solução</h3>
-                            <p class="text-gray-400">
-                                Design técnico detalhado, seleção de stack tecnológico, modelagem de dados e planejamento de infraestrutura cloud-native.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
-                        <div class="md:w-5/12 md:text-right order-2 md:order-1">
-                            <h3 class="text-2xl font-bold mb-3">Desenvolvimento com IA</h3>
-                            <p class="text-gray-400">
-                                Codificação acelerada utilizando assistentes AI, pair programming automatizado e geração inteligente de testes unitários.
-                            </p>
-                        </div>
-                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-blue-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
-                            <span class="text-2xl font-bold text-blue-400">03</span>
-                        </div>
-                        <div class="md:w-5/12 order-3"></div>
-                    </div>
-                    
-                    <!-- Step 4 -->
-                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
-                        <div class="md:w-5/12 order-2"></div>
-                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-green-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
-                            <span class="text-2xl font-bold text-green-400">04</span>
-                        </div>
-                        <div class="md:w-5/12 order-3 md:order-3">
-                            <h3 class="text-2xl font-bold mb-3">Testes e Ajustes</h3>
-                            <p class="text-gray-400">
-                                QA automatizado, testes de carga, segurança e usabilidade. Refinamentos baseados em feedback real de usuários pilotos.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 5 -->
-                    <div class="relative flex flex-col md:flex-row items-center md:justify-between gap-8 reveal">
-                        <div class="md:w-5/12 md:text-right order-2 md:order-1">
-                            <h3 class="text-2xl font-bold mb-3">Deploy e Escala</h3>
-                            <p class="text-gray-400">
-                                Implantação em produção com CI/CD, monitoramento contínuo, otimização de performance e plano de escalabilidade gradual.
-                            </p>
-                        </div>
-                        <div class="absolute left-8 md:left-1/2 w-16 h-16 rounded-full bg-[#0a0a0f] border-2 border-pink-500 flex items-center justify-center z-10 md:-translate-x-1/2 order-1 md:order-2">
-                            <span class="text-2xl font-bold text-pink-400">05</span>
-                        </div>
-                        <div class="md:w-5/12 order-3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-transparent"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%236366f1%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-        
-        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10 reveal">
-            <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-                Transforme sua ideia em uma<br>
-                <span class="gradient-text">plataforma real</span> em tempo recorde
-            </h2>
-            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                Vamos discutir como a Inteligência Artificial pode acelerar o desenvolvimento do seu próximo sistema empresarial ou produto digital.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button class="btn-primary px-10 py-5 rounded-full text-lg font-medium text-white flex items-center gap-3 glow-effect" onclick="showContactModal()">
-                    Solicitar Parceria
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </button>
-            </div>
-            
-            <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 text-gray-500">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    <span>rafaelsoaresproo@gmail.com</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    <span>linkedin.com/in/rafaelsoarespro</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#0a0a0f] border-t border-white/10 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                        <i data-lucide="cpu" class="w-4 h-4 text-white"></i>
-                    </div>
-                    <div>
-                        <div class="font-semibold">AI Systems Architect</div>
-                        <div class="text-sm text-gray-500">Especialista em Produtos e Arquitetura de IA</div>
-                    </div>
-                </div>
-                
-                <div class="flex items-center gap-6 text-sm text-gray-500">
-                    <a href="rafaelsoaresproo@gmail.com" class="hover:text-white transition-colors">Email Profissional</a>
-                    <a href="https://www.linkedin.com/in/rafaelsoarespro/" class="hover:text-white transition-colors">LinkedIn</a>
-                    <span>2024 Todos os direitos reservados</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Contact Modal -->
-    <div id="contact-modal" class="fixed inset-0 z-50 hidden">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeContactModal()"></div>
-        <div class="absolute inset-0 flex items-center justify-center p-6">
-            <div class="bg-[#12121a] border border-white/10 rounded-2xl p-6 sm:p-8 
-            w-full max-w-md 
-            relative 
-            max-h-[90vh] overflow-y-auto">
-                <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-                <h3 class="text-2xl font-bold mb-2">Iniciar Conversa</h3>
-                <p class="text-gray-400 mb-6">Preencha os dados abaixo para agendarmos uma call estratégica.</p>
-                
-                <form class="space-y-4">
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Nome</label>
-        <input name="nome" type="text" required
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-            placeholder="Seu nome completo">
-    </div>
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Email</label>
-        <input name="email" type="email" required
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-            placeholder="seu@email.com">
-    </div>
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Telefone</label>
-        <input name="telefone" type="tel"
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-            placeholder="(62) 9 0000-0000">
-    </div>
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Empresa</label>
-        <input name="empresa" type="text"
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-            placeholder="Nome da sua empresa">
-    </div>
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Tipo de Projeto</label>
-        <select name="tipo_projeto"
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
-            <option>MVP / SaaS</option>
-            <option>ERP Empresarial</option>
-            <option>Marketplace</option>
-            <option>Automação com IA</option>
-            <option>Aplicativo Mobile</option>
-            <option>Plataforma Web</option>
-            <option>Outro</option>
-        </select>
-    </div>
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Orçamento Estimado</label>
-        <select name="orcamento"
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
-            <option>Até R$ 10.000</option>
-            <option>R$ 10.000 - R$ 25.000</option>
-            <option>R$ 25.000 - R$ 50.000</option>
-            <option>Acima de R$ 50.000</option>
-            <option>Prefiro discutir em call</option>
-        </select>
-    </div>
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Prazo Desejado</label>
-        <select name="prazo"
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
-            <option>Urgente (até 30 dias)</option>
-            <option>1 a 3 meses</option>
-            <option>3 a 6 meses</option>
-            <option>Sem prazo definido</option>
-        </select>
-    </div>
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Descreva seu projeto</label>
-        <textarea name="mensagem" rows="4"
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-            placeholder="Explique sua ideia, problema ou objetivo..."></textarea>
-    </div>
-
-    <div>
-        <label class="block text-sm text-gray-400 mb-2">Como nos conheceu?</label>
-        <select name="origem"
-            class="w-full bg-[#0a0a0f] border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors">
-            <option>Instagram</option>
-            <option>Google</option>
-            <option>Indicação</option>
-            <option>LinkedIn</option>
-            <option>Outro</option>
-        </select>
-    </div>
-
-    <div class="flex items-start gap-2">
-        <input type="checkbox" name="aceite" required class="mt-1">
-        <label class="text-xs text-gray-400">
-            Concordo em fornecer meus dados para contato.
-        </label>
-    </div>
-
-    <button type="submit" class="w-full btn-primary py-4 rounded-lg font-medium text-white mt-6">
-        Solicitar Contato
-    </button>
-
-</form>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-        
-        // Typing Effect
-        const texts = ['e Sistemas Escaláveis', 'com Inteligência Artificial', 'que Transformam Negócios'];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.getElementById('typing-text');
-        
-        function type() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            let typeSpeed = isDeleting ? 50 : 100;
-            
-            if (!isDeleting && charIndex === currentText.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                typeSpeed = 500;
-            }
-            
-            setTimeout(type, typeSpeed);
-        }
-        
-        // Start typing effect
-        setTimeout(type, 1000);
-        
-        // Scroll Reveal Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                navbar.classList.add('shadow-lg');
-                navbar.style.background = 'rgba(10, 10, 15, 0.95)';
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.style.background = 'rgba(10, 10, 15, 0.8)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-        
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Modal Functions
-        function showContactModal() {
-            document.getElementById('contact-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeContactModal() {
-            document.getElementById('contact-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Close modal on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeContactModal();
-            }
-        });
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Parallax effect for hero glow
-        document.addEventListener('mousemove', (e) => {
-            const glow = document.querySelector('.hero-glow');
-            const x = (window.innerWidth - e.pageX * 2) / 100;
-            const y = (window.innerHeight - e.pageY * 2) / 100;
-            
-            glow.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-        });
-
-         // Acrescentado: envio real para WhatsApp
-document.querySelector('#contact-modal form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const project = this.querySelector('select').value;
-
-    const message = `Olá! 👋
-Me chamo ${name}
-
-📧 Email: ${email}
-🚀 Tipo de Projeto: ${project}
-
-Gostaria de agendar uma call estratégica.`;
-
-    const phone = "5562985558520";
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-    window.open(url, '_blank');
-
-    closeContactModal();
-});
-    </script>
-   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('out'),1800));
+const cur=document.getElementById('cur'),curR=document.getElementById('cur-ring');
+if(cur&&curR){let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});(function loop(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(loop)})();document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='26px';cur.style.height='26px';curR.style.width='52px';curR.style.height='52px';curR.style.opacity='.28'});el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';curR.style.width='32px';curR.style.height='32px';curR.style.opacity='.55'})});}
+(()=>{const cv=document.getElementById('scene');if(!cv)return;const cx=cv.getContext('2d');if(!cx)return;let W,H,pts=[];const resize=()=>{W=cv.width=window.innerWidth;H=cv.height=window.innerHeight};const mk=()=>{pts=[];for(let i=0;i<52;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32,r:Math.random()*1.1+.4})};const draw=()=>{cx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){cx.beginPath();cx.strokeStyle=`rgba(184,134,11,${(1-d/130)*.1})`;cx.lineWidth=.7;cx.moveTo(pts[i].x,pts[i].y);cx.lineTo(pts[j].x,pts[j].y);cx.stroke()}}pts.forEach(p=>{cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle='rgba(184,134,11,.25)';cx.fill();p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1});requestAnimationFrame(draw)};resize();mk();draw();window.addEventListener('resize',()=>{resize();mk()})})();
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('anchored',scrollY>60));
+function toggleNav(){const m=document.getElementById('navMenu');const open=m.classList.toggle('open');document.getElementById('burger').setAttribute('aria-expanded',open);}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navMenu').classList.remove('open')));
+const tItems=['✦ Goiânia &amp; Aparecida','<strong>Manutenção Preventiva</strong>','✦ Resolve Antes de Quebrar','<strong>Planos com Garantia</strong>','✦ Condomínios · Imobiliárias · Famílias','<strong>5× mais barato</strong>','✦ Contrato + Relatório Mensal','<strong>+200 imóveis atendidos</strong>','✦ 97% de renovação','<strong>Diagnóstico Gratuito</strong>'];
+const track=document.getElementById('tickerTrack');if(track){const c=[...tItems,...tItems].map(t=>`<span class="ticker-item">${t}<span class="ticker-sep">·</span></span>`).join('');track.innerHTML=c+c}
+const ro=new IntersectionObserver((ents)=>{ents.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('up'),i*65);ro.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>ro.observe(el));
+const co=new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){const el=e.target,t=+el.dataset.t,s=t/(1800/16);let c=0;const tm=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(tm)}el.textContent=Math.floor(c)},16);co.unobserve(el)}})},{threshold:.5});document.querySelectorAll('.cnt').forEach(el=>co.observe(el));
+const bo=new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.cost-bar-fill').forEach(b=>b.style.width=b.dataset.w+'%');bo.disconnect()}})},{threshold:.4});const sb=document.getElementById('bSafe');if(sb){const c=sb.closest('.prob-cost-card');if(c)bo.observe(c)}
+window.addEventListener('load',()=>{const ctx=document.getElementById('ecoChart');if(!ctx)return;new Chart(ctx,{type:'line',data:{labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],datasets:[{label:'Com Plano (R$)',data:[250,250,250,250,250,250,250,250,250,250,250,250],borderColor:'#4caf7d',backgroundColor:'rgba(76,175,125,.1)',borderWidth:2,pointRadius:4,pointBackgroundColor:'#4caf7d',fill:true,tension:.4},{label:'Sem Plano — Emergências (R$)',data:[0,0,1200,0,0,800,0,1500,0,0,600,2500],borderColor:'#e57373',backgroundColor:'rgba(229,115,115,.08)',borderWidth:2,pointRadius:4,pointBackgroundColor:'#e57373',fill:true,tension:.4}]},options:{responsive:true,plugins:{legend:{labels:{color:'#8a8278',font:{size:11},padding:14}},tooltip:{mode:'index',intersect:false}},scales:{x:{ticks:{color:'#8a8278',font:{size:10}},grid:{color:'rgba(0,0,0,.05)'}},y:{ticks:{color:'#8a8278',font:{size:10},callback:v=>'R$ '+v},grid:{color:'rgba(0,0,0,.05)'}}}}});});
+function heroLead(){const n=document.getElementById('hN').value.trim(),p=document.getElementById('hP').value.trim(),t=document.getElementById('hT').value;if(!n||!p){alert('Por favor, preencha seu nome e WhatsApp.');return}window.open(`https://wa.me/5562985558320?text=${encodeURIComponent('Olá Rafael!\n\nMeu nome é '+n+'.\nQuero diagnóstico gratuito para: '+(t||'meu imóvel')+'.\nMeu WhatsApp: '+p+'\n\nVi no site rafaelsoares.pro')}`,'_blank');}
+function submitCForm(e){e.preventDefault();const fd=new FormData(document.getElementById('cForm'));window.open(`https://wa.me/5562985558320?text=${encodeURIComponent('*Nova Solicitação — rafaelsoares.pro*\n\n👤 Nome: '+fd.get('nome')+'\n📱 WhatsApp: '+fd.get('whatsapp')+'\n✉️ E-mail: '+(fd.get('email')||'—')+'\n🏠 Tipo: '+fd.get('tipo')+'\n📍 Bairro: '+(fd.get('bairro')||'—')+'\n💬 Mensagem: '+(fd.get('mensagem')||'—'))}`,'_blank');const m=document.getElementById('formMsg2');m.className='ok';m.textContent='✅ Solicitação enviada! Retornamos em até 2 horas.';document.getElementById('cForm').reset();}
+(()=>{const box=document.getElementById('cookieBox'),modal=document.getElementById('cookieModal');if(!box||!modal)return;if(!localStorage.getItem('cookieConsent'))setTimeout(()=>box.classList.add('active'),300);const set=(e,a,m)=>{localStorage.setItem('cookieConsent',JSON.stringify({essential:e,analytics:a,marketing:m}));box.classList.remove('active');modal.classList.remove('active')};document.getElementById('acceptEssential').onclick=()=>set(true,false,false);document.getElementById('acceptAll').onclick=()=>set(true,true,true);document.getElementById('configureCookies').onclick=()=>modal.classList.add('active');document.getElementById('closeModal').onclick=()=>modal.classList.remove('active');document.getElementById('savePreferences').onclick=()=>set(true,!!document.getElementById('analyticsCookies')?.checked,!!document.getElementById('marketingCookies')?.checked);document.getElementById('acceptAllModal').onclick=()=>set(true,true,true);document.getElementById('rejectAllModal').onclick=()=>set(true,false,false);modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('active')});const em=document.getElementById('exitModal'),sb=document.getElementById('stayButton'),ce=document.getElementById('contactExit');if(em&&sb&&ce){let shown=sessionStorage.getItem('es')==='1';document.addEventListener('mouseout',e=>{if(shown||window.innerWidth<=800)return;if(e.clientY<=10&&!e.relatedTarget){shown=true;sessionStorage.setItem('es','1');em.classList.add('active')}});sb.onclick=()=>em.classList.remove('active');ce.onclick=()=>{em.classList.remove('active');window.open('https://wa.me/5562985558320?text=Ol%C3%A1!%20Quero%20atendimento%20priorit%C3%A1rio.','_blank')};em.addEventListener('click',e=>{if(e.target===em)em.classList.remove('active')});document.addEventListener('keydown',e=>{if(e.key==='Escape')em.classList.remove('active')})}})();
+</script>
 </body>
 </html>
