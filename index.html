@@ -494,8 +494,378 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
 </style>
 </head>
 <body>
-<!-- CONTEÚDO SEGUE IGUAL AO ORIGINAL, MAS COM CSS ATUALIZADO -->
-<!-- Apenas a classe .hero-badge foi modificada de top:16px para top:60% com transform:translateY(-50%) -->
-<!-- O resto do HTML permanece 100% idêntico -->
+
+<div id="cur"></div><div id="cur-ring"></div>
+<canvas id="scene"></canvas>
+
+<div id="loader">
+  <div class="ld-logo">Rafael <span>Soares</span></div>
+  <div class="ld-bar"><div class="ld-fill"></div></div>
+  <div class="ld-city">Goiânia · Aparecida de Goiânia — GO</div>
+</div>
+
+<div class="site">
+
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-name">Rafael <em>Soares</em></span>
+    <span class="nav-logo-sub">Manutenção Preventiva · GO</span>
+  </a>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="#services">Planos</a></li>
+    <li><a href="#how">Como Funciona</a></li>
+    <li><a href="#market">Mercado</a></li>
+    <li><a href="#testimonials">Depoimentos</a></li>
+    <li><a href="#contact" class="nav-cta-link">Orçamento Grátis</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="h-kicker"><span class="h-kicker-dot"></span>Goiânia &amp; Aparecida · Desde 2018</div>
+    <h1 class="h-title">
+      <span class="h-title-line"><span class="h-title-word">Resolve</span></span>
+      <span class="h-title-line"><span class="h-title-word"><em>Antes</em></span></span>
+      <span class="h-title-line"><span class="h-title-word">de Quebrar.</span></span>
+    </h1>
+    <p class="h-sub">Chega de pagar <strong>5× mais caro</strong> em emergências.<br>Planos de manutenção preventiva com contrato, garantia e um profissional de <strong>confiança real</strong> — para residências, imobiliárias e condomínios.</p>
+    <div class="h-btns">
+      <a href="https://wa.me/5562985558320?text=Olá%20Rafael!%20Vi%20o%20site%20e%20quero%20conhecer%20os%20planos." class="btn-ink" target="_blank" rel="noopener">
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Quero meu Plano</span>
+      </a>
+      <a href="#services" class="btn-ghost">Ver Planos →</a>
+    </div>
+    <div class="h-trust">
+      <div class="h-trust-item"><div class="h-trust-num"><span class="cnt" data-t="200">0</span><sup>+</sup></div><div class="h-trust-label">Imóveis<br>Atendidos</div></div>
+      <div class="h-trust-div"></div>
+      <div class="h-trust-item"><div class="h-trust-num"><span class="cnt" data-t="97">0</span><sup>%</sup></div><div class="h-trust-label">Renovam<br>Contrato</div></div>
+      <div class="h-trust-div"></div>
+      <div class="h-trust-item"><div class="h-trust-num"><span class="cnt" data-t="5">0</span><sup>×</sup></div><div class="h-trust-label">Mais barato<br>que emergência</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- banne.png: close-up profissional no HERO = primeiro impacto visual, gera confiança imediata -->
+    <div class="hero-photo-wrap">
+      <img src="img/banne.png" alt="Rafael Soares — Especialista em Manutenção Preventiva em Goiânia" loading="eager"/>
+      <div class="hero-badge">Profissional Certificado<span>15 anos de experiência</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="card-headline">Diagnóstico Gratuito</div>
+      <div class="card-sub">Descubra o plano ideal em 2 minutos. Sem compromisso.</div>
+      <div class="form-field"><label>Seu Nome</label><input type="text" id="hN" placeholder="Ex: Maria Silva" autocomplete="name"/></div>
+      <div class="form-field"><label>WhatsApp</label><input type="tel" id="hP" placeholder="(62) 99999-9999" autocomplete="tel"/></div>
+      <div class="form-field"><label>Tipo de Imóvel</label>
+        <select id="hT"><option value="">Selecione...</option><option value="Residência / Casa">Residência / Casa</option><option value="Apartamento">Apartamento</option><option value="Imobiliária (vários imóveis)">Imobiliária (vários imóveis)</option><option value="Condomínio / Prédio">Condomínio / Prédio</option></select>
+      </div>
+      <button class="card-btn" onclick="heroLead()"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Solicitar Diagnóstico Grátis</span></button>
+      <div class="card-seal"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Atendemos Goiânia e Aparecida · Resposta em até 2h</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item"><div class="proof-icon">⚡</div><div class="proof-text"><strong>Resposta em até 2h</strong><span>em dias úteis</span></div></div>
+  <div class="proof-item"><div class="proof-icon">📋</div><div class="proof-text"><strong>Contrato + Garantia</strong><span>por escrito, sempre</span></div></div>
+  <div class="proof-item"><div class="proof-icon">📍</div><div class="proof-text"><strong>Goiânia e Aparecida</strong><span>atendimento local</span></div></div>
+  <div class="proof-item"><div class="proof-icon">🏆</div><div class="proof-text"><strong>97% renovam contrato</strong><span>satisfação garantida</span></div></div>
+  <div class="proof-item"><div class="proof-icon">💰</div><div class="proof-text"><strong>5× mais barato</strong><span>que serviço emergencial</span></div></div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-track" id="tickerTrack"></div></div>
+
+<!-- PROBLEM -->
+<section id="problem" class="section">
+  <div class="section-inner">
+    <div class="tag reveal">O Problema Real</div>
+    <h2 class="sec-title reveal">O mercado de reformas<br>em Goiânia está <em>quebrado</em></h2>
+    <div class="problem-layout">
+      <div class="problem-list">
+        <div class="prob-item reveal"><div class="prob-n">01</div><div class="prob-body"><h4>Emergência custa 5× mais</h4><p>Um reparo preventivo de R$ 200 vira um prejuízo de R$ 1.000+ quando explode às 23h ou no fim de semana.</p></div></div>
+        <div class="prob-item reveal"><div class="prob-n">02</div><div class="prob-body"><h4>Profissionais sem garantia e sem prazo</h4><p>O mercado goiano é dominado por informais que somem quando o problema retorna — sem contrato, sem responsabilidade.</p></div></div>
+        <div class="prob-item reveal"><div class="prob-n">03</div><div class="prob-body"><h4>Casas não foram feitas para idosos</h4><p>A população 60+ cresce 3× mais rápido em Goiânia. Filhos preocupados precisam urgentemente de segurança para os pais.</p></div></div>
+        <div class="prob-item reveal"><div class="prob-n">04</div><div class="prob-body"><h4>Imóvel vago = prejuízo certo</h4><p>Imobiliárias perdem locações porque não têm parceiro técnico para deixar o imóvel "pronto para morar" em dias.</p></div></div>
+        <div class="prob-item reveal"><div class="prob-n">05</div><div class="prob-body"><h4>Nova lei de inspeção predial — GO</h4><p>Síndicos de Goiânia estão sob pressão legal para apresentar laudos técnicos. Pouquíssimos profissionais habilitados.</p></div></div>
+      </div>
+      <div class="prob-visual reveal-r">
+        <div class="prob-cost-card">
+          <div class="prob-cost-title">Análise de Custo — 12 meses</div>
+          <div class="cost-vs">
+            <div class="cost-row"><div class="cost-row-label"><span class="cost-row-name">Com Plano Preventivo</span><span class="cost-row-val safe">R$ 3.000</span></div><div class="cost-bar-bg"><div class="cost-bar-fill fill-safe" id="bSafe" data-w="24"></div></div></div>
+            <div class="cost-divider"><span>vs</span></div>
+            <div class="cost-row"><div class="cost-row-label"><span class="cost-row-name">Sem Plano (Emergências)</span><span class="cost-row-val danger">R$ 12.600</span></div><div class="cost-bar-bg"><div class="cost-bar-fill fill-danger" id="bDanger" data-w="100"></div></div></div>
+          </div>
+          <div class="cost-saving"><div class="cost-saving-num">R$ 9.600</div><div class="cost-saving-label">de economia média anual com o plano preventivo</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY — bannes.png (foto panorâmica/escritório) usada aqui para humanizar marca e demonstrar autoridade -->
+<section id="credibility" style="background:var(--cream);overflow:hidden">
+  <div style="max-width:100%">
+    <div class="cred-grid">
+      <div class="cred-text-col">
+        <div class="tag reveal">Por que Rafael Soares?</div>
+        <h2 class="sec-title reveal">15 anos resolvendo <em>o que outros deixam pra depois</em></h2>
+        <p class="sec-sub reveal" style="margin-bottom:0">Experiência real construída em campo — com cursos SENAI, execução em imóveis residenciais, comerciais e condomínios na Grande Goiânia.</p>
+        <div class="cred-list">
+          <div class="cred-item reveal"><div class="cred-icon">📜</div><div><h4>Profissional Certificado (SENAI)</h4><p>Formação técnica reconhecida em elétrica, hidráulica, reformas e manutenção predial.</p></div></div>
+          <div class="cred-item reveal"><div class="cred-icon">🔒</div><div><h4>Contrato + Garantia por Escrito</h4><p>Todos os serviços com escopo definido, prazo garantido e 90 a 365 dias de cobertura.</p></div></div>
+          <div class="cred-item reveal"><div class="cred-icon">📊</div><div><h4>Relatório Mensal no WhatsApp</h4><p>Transparência total: fotos, check-list e resumo de tudo que foi feito no seu imóvel.</p></div></div>
+          <div class="cred-item reveal"><div class="cred-icon">🏠</div><div><h4>+200 Imóveis Atendidos em Goiânia</h4><p>Residências, condomínios e carteiras imobiliárias — experiência comprovada na região.</p></div></div>
+        </div>
+      </div>
+      <div class="cred-photo-col reveal-r">
+        <img src="img/bannes.png" alt="Rafael Soares em seu escritório — Especialista em Manutenção Preventiva Goiânia" loading="lazy"/>
+        <div class="cred-photo-overlay"></div>
+        <div class="cred-stat-float csf-1"><div class="cred-stat-num">97%</div><div class="cred-stat-lbl">Renovam contrato</div></div>
+        <div class="cred-stat-float csf-2"><div class="cred-stat-num">200+</div><div class="cred-stat-lbl">Imóveis atendidos</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="plans-header">
+      <div class="reveal-l"><div class="tag">Nossos Planos</div><h2 class="sec-title">Escolha o plano<br>ideal para <em>você</em></h2></div>
+      <div class="reveal-r"><p class="sec-sub">Pare de pagar caro por emergências. Com um plano de assinatura você tem previsibilidade, segurança e um profissional de confiança sempre disponível.</p></div>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card reveal">
+        <div class="plan-avatar">👴</div><div class="plan-audience">Para Família / Idosos</div>
+        <h3 class="plan-name">Assinatura Residencial Sênior</h3>
+        <p class="plan-desc">Moradia segura e tranquilidade para toda a família. Visita mensal com check-up completo e pequenos reparos incluídos.</p>
+        <ul class="plan-features"><li>Visita mensal de check-up completo</li><li>Revisão de iluminação e elétrica</li><li>Verificação de vazamentos</li><li>Ajustes de acessibilidade</li><li>Desobstrução de calhas</li><li>Relatório mensal por WhatsApp</li></ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 150 <span class="plan-price-period">/ mês</span></div>
+        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20no%20Plano%20Residencial%20Sênior." class="plan-btn" target="_blank" rel="noopener">Solicitar Plano →</a>
+      </div>
+      <div class="plan-card featured reveal">
+        <div class="plan-featured-tag">Mais Popular</div>
+        <div class="plan-avatar">🏢</div><div class="plan-audience">Para Imobiliárias</div>
+        <h3 class="plan-name">Retainer Imobiliário</h3>
+        <p class="plan-desc">Um parceiro único para toda sua carteira. Gestão completa — entrada, saída de inquilinos e manutenção preventiva.</p>
+        <ul class="plan-features"><li>Gestão de toda a carteira</li><li>Reparos de entrada e saída</li><li>Manutenção preventiva mensal</li><li>Relatório fotográfico detalhado</li><li>Prioridade no atendimento</li><li>Orçamentos em até 4 horas</li></ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 50 <span class="plan-price-period">/ imóvel / mês</span></div>
+        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20no%20Retainer%20Imobiliário." class="plan-btn" target="_blank" rel="noopener">Falar com Rafael →</a>
+      </div>
+      <div class="plan-card reveal">
+        <div class="plan-avatar">🏗️</div><div class="plan-audience">Para Condomínios</div>
+        <h3 class="plan-name">Zeladoria Técnica Predial</h3>
+        <p class="plan-desc">Responsabilidade técnica pela saúde estrutural do seu edifício — laudos, cronograma e conformidade legal.</p>
+        <ul class="plan-features"><li>Inspeção predial periódica</li><li>Plano de manutenção anual</li><li>Laudos técnicos assinados</li><li>Conformidade com lei GO</li><li>Gestão de fornecedores</li><li>Reunião mensal com síndico</li></ul>
+        <div class="plan-divider"></div>
+        <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 1.500 <span class="plan-price-period">/ mês</span></div>
+        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20na%20Zeladoria%20Técnica%20Predial." class="plan-btn" target="_blank" rel="noopener">Solicitar Plano →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" class="section">
+  <div class="section-inner">
+    <div class="tag reveal">Como Funciona</div>
+    <h2 class="sec-title reveal">Simples. Rápido.<br><em>Sem burocracia.</em></h2>
+    <div class="how-grid">
+      <div class="how-steps">
+        <div class="how-step reveal"><div class="step-circle">1</div><div class="step-content"><h4>Entre em Contato</h4><p>Mande mensagem no WhatsApp ou preencha o formulário. Sem fila — resposta em até 2 horas.</p></div></div>
+        <div class="how-step reveal"><div class="step-circle">2</div><div class="step-content"><h4>Diagnóstico Gratuito</h4><p>Visita técnica completa ao seu imóvel, identificando pontos de atenção antes que virem problemas.</p></div></div>
+        <div class="how-step reveal"><div class="step-circle">3</div><div class="step-content"><h4>Plano Personalizado</h4><p>Proposta clara: escopo definido, valor fixo mensal, contrato formal e garantia por escrito.</p></div></div>
+        <div class="how-step reveal"><div class="step-circle">4</div><div class="step-content"><h4>Proteção Contínua</h4><p>Assinatura ativa e você relaxa. Relatórios mensais, transparência total e suporte prioritário.</p></div></div>
+      </div>
+      <div class="how-visual reveal-r">
+        <div class="how-visual-title">Cronograma de Atendimento</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot">📲</div><div><div class="tl-time">Dia 1 · 0–2h</div><div class="tl-text">Primeiro contato e confirmação do agendamento</div></div></div>
+          <div class="tl-item"><div class="tl-dot">🔍</div><div><div class="tl-time">Dia 2-3 · Diagnóstico</div><div class="tl-text">Visita técnica gratuita e relatório fotográfico</div></div></div>
+          <div class="tl-item"><div class="tl-dot">📋</div><div><div class="tl-time">Dia 4 · Proposta</div><div class="tl-text">Plano personalizado com valor fixo e contrato</div></div></div>
+          <div class="tl-item"><div class="tl-dot">🛡️</div><div><div class="tl-time">Mensal · Proteção</div><div class="tl-text">Check-up recorrente, relatório e suporte prioritário</div></div></div>
+          <div class="tl-item"><div class="tl-dot">📈</div><div><div class="tl-time">Anual · Análise</div><div class="tl-text">Revisão do plano e relatório de economia gerada</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section id="market" class="section">
+  <div class="section-inner">
+    <div class="market-layout">
+      <div>
+        <div class="tag reveal">Oportunidade de Mercado</div>
+        <h2 class="sec-title reveal">Goiânia cresce.<br>A demanda <em>também.</em></h2>
+        <p class="sec-sub reveal" style="margin-bottom:32px">O mercado de manutenção preventiva em Goiânia e Aparecida ainda é pouco estruturado, apesar do crescimento imobiliário acelerado.</p>
+        <div class="market-points">
+          <div class="mpoint reveal"><div class="mpoint-icon">👵</div><div><h4>60+ anos: maior poder aquisitivo</h4><p>Idosos em Goiânia crescem 3× mais rápido — e detêm o maior poder aquisitivo acumulado.</p></div></div>
+          <div class="mpoint reveal"><div class="mpoint-icon">🔑</div><div><h4>+300 imobiliárias ativas em Goiânia</h4><p>Todas precisam de um parceiro técnico único e confiável para gestão de manutenção.</p></div></div>
+          <div class="mpoint reveal"><div class="mpoint-icon">⚖️</div><div><h4>Lei de inspeção predial obrigatória</h4><p>Síndicos goianos sob pressão legal. Pouquíssimos profissionais habilitados para atender.</p></div></div>
+        </div>
+      </div>
+      <div class="chart-wrap reveal-r">
+        <div class="chart-wrap-title">Projeção de Economia — Plano Preventivo vs Emergencial</div>
+        <canvas id="ecoChart" height="300"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — banne.png (close-up) usada no depoimento principal para maximizar reconhecimento de rosto e humanizar -->
+<section id="testimonials" class="section">
+  <div class="section-inner">
+    <div class="tag reveal">Depoimentos</div>
+    <h2 class="sec-title reveal">Quem já <em>confia</em><br>no Rafael</h2>
+    <div class="testi-featured reveal">
+      <div class="testi-feat-img">
+        <img src="img/banne.png" alt="Rafael Soares — Manutenção Preventiva Goiânia" loading="lazy"/>
+      </div>
+      <div class="testi-feat-body">
+        <div class="testi-feat-stars">★★★★★</div>
+        <p class="testi-feat-quote">"Gerencio 47 imóveis alugados em Aparecida. Antes era um caos completo. Hoje tenho um número único para ligar, orçamento em horas e imóvel pronto para o próximo inquilino em dias. O Rafael transformou minha operação."</p>
+        <div class="testi-feat-author">
+          <div class="testi-feat-av">CP</div>
+          <div><div class="testi-feat-name">Carla P.</div><div class="testi-feat-role">Gestora Imobiliária · Aparecida de Goiânia</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Minha mãe tem 72 anos e mora sozinha no Setor Bueno. Desde que contratei o plano sênior, consigo trabalhar sossegado. O Rafael resolve tudo e me manda relatório todo mês."</p><div class="testi-author"><div class="testi-av">MF</div><div><div class="testi-name">Marcelo F.</div><div class="testi-role">Empresário · Setor Bueno, Goiânia</div></div></div></div>
+      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Como síndico, tinha o pesadelo da inspeção predial. Rafael assumiu tudo — laudo, plano de manutenção e apresentou para os condôminos. Profissionalismo que nunca vi no mercado."</p><div class="testi-author"><div class="testi-av">JR</div><div><div class="testi-name">José R.</div><div class="testi-role">Síndico · Condomínio Jardins, Goiânia</div></div></div></div>
+      <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-quote">"Contratei o plano residencial para meus pais idosos. A tranquilidade que tenho hoje é indescritível. Saber que tem alguém de confiança cuidando deles todo mês vale cada centavo."</p><div class="testi-author"><div class="testi-av">LA</div><div><div class="testi-name">Luciana A.</div><div class="testi-role">Filha de assinante · Jardim América, Goiânia</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — bannes.png antes dos botões: foto ampla reforça autoridade no momento decisivo de conversão -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="cta-urgency">⏰ Vagas limitadas em Goiânia</div>
+    <div class="cta-photo-strip reveal">
+      <img src="img/bannes.png" alt="Rafael Soares — Especialista Certificado em Manutenção Preventiva Goiânia" loading="lazy"/>
+      <div class="cta-photo-strip-overlay">
+        <div class="cta-strip-txt"><strong>Rafael Soares · Especialista Certificado</strong><span>Goiânia e Aparecida de Goiânia · Desde 2018</span></div>
+      </div>
+    </div>
+    <h2 class="cta-title reveal">Pare de pagar caro<br>por <em>emergências evitáveis</em></h2>
+    <p class="cta-sub reveal">A próxima vez que um cano estourar às 23h ou o teto começar a vazar na chuva, você vai se lembrar desse momento. Não deixe para depois.</p>
+    <div class="cta-btns reveal">
+      <a href="https://wa.me/5562985558320?text=Olá!%20Quero%20contratar%20um%20plano%20de%20manutenção%20preventiva." class="btn-ink" target="_blank" rel="noopener">
+        <span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Falar no WhatsApp Agora</span>
+      </a>
+      <a href="#contact" class="btn-ghost">Enviar Mensagem</a>
+    </div>
+    <p class="cta-note">✓ Diagnóstico gratuito &nbsp;·&nbsp; ✓ Sem taxa de adesão &nbsp;·&nbsp; ✓ Atendemos toda Goiânia e Aparecida</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="tag reveal">Contato</div>
+    <h2 class="sec-title reveal">Vamos <em>conversar?</em></h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal-l">
+        <p class="contact-info-intro">Atendemos Goiânia e Aparecida de Goiânia. Entre em contato pelo canal que preferir — respondemos em até 2 horas em dias úteis.</p>
+        <a href="https://wa.me/5562985558320" class="cinfo-item" target="_blank" rel="noopener"><div class="cinfo-icon">💬</div><div><div class="cinfo-label">WhatsApp</div><div class="cinfo-val">(62) 98555-8320</div></div></a>
+        <a href="tel:+5562985558320" class="cinfo-item"><div class="cinfo-icon">📞</div><div><div class="cinfo-label">Telefone</div><div class="cinfo-val">(62) 98555-8320</div></div></a>
+        <a href="mailto:rafaelsoaresproo@gmail.com" class="cinfo-item"><div class="cinfo-icon">✉️</div><div><div class="cinfo-label">E-mail</div><div class="cinfo-val">rafaelsoaresproo@gmail.com</div></div></a>
+        <div class="cinfo-item" style="cursor:default"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">Área de Atendimento</div><div class="cinfo-val">Goiânia e Aparecida de Goiânia — GO</div></div></div>
+        <div class="cinfo-item" style="cursor:default"><div class="cinfo-icon">🕐</div><div><div class="cinfo-label">Horário</div><div class="cinfo-val">Seg–Sex 7h–18h · Sáb 8h–13h</div></div></div>
+      </div>
+      <div class="cform reveal-r">
+        <h3>Solicitar Orçamento</h3>
+        <p class="cform-sub">Preencha e retornamos em até 2 horas.</p>
+        <form id="cForm" onsubmit="submitCForm(event)">
+          <div class="cform-row">
+            <div class="form-field"><label>Nome*</label><input type="text" name="nome" required placeholder="Seu nome"/></div>
+            <div class="form-field"><label>WhatsApp*</label><input type="tel" name="whatsapp" required placeholder="(62) 99999-9999"/></div>
+          </div>
+          <div class="form-field"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com"/></div>
+          <div class="form-field"><label>Tipo de Imóvel*</label><select name="tipo" required><option value="">Selecione...</option><option>Residência / Casa</option><option>Apartamento</option><option>Imobiliária (vários imóveis)</option><option>Condomínio / Prédio</option></select></div>
+          <div class="form-field"><label>Bairro / Cidade</label><input type="text" name="bairro" placeholder="Ex: Setor Bueno, Goiânia"/></div>
+          <div class="form-field"><label>Descreva sua necessidade</label><textarea name="mensagem" placeholder="Conte sobre o que precisa..."></textarea></div>
+          <button type="submit" class="cform-btn"><span>Enviar Solicitação →</span></button>
+          <div id="formMsg2"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="nav-logo-name">Rafael <em>Soares</em></span><p>Especialista em manutenção preventiva residencial e predial em Goiânia e Aparecida de Goiânia. Profissionalismo, garantia e previsibilidade.</p></div>
+      <div class="footer-col"><h5>Planos</h5><ul><li><a href="#services">Residencial Sênior</a></li><li><a href="#services">Retainer Imobiliário</a></li><li><a href="#services">Zeladoria Técnica</a></li></ul></div>
+      <div class="footer-col"><h5>Institucional</h5><ul><li><a href="sobre.html">Sobre a Empresa</a></li><li><a href="etica.html">Código de Ética</a></li><li><a href="como-funciona.html">Como Funciona</a></li><li><a href="garantia.html">Garantia</a></li><li><a href="termos.html">Termos de Uso</a></li><li><a href="privacidade.html">Privacidade</a></li><li><a href="cookies.html">Cookies</a></li></ul></div>
+      <div class="footer-col"><h5>Suporte</h5><ul><li><a href="faq.html">Perguntas Frequentes</a></li><li><a href="contato.html">Fale Conosco</a></li><li><a href="orcamento.html">Solicitar Orçamento</a></li><li><a href="cancelamento.html">Cancelamento</a></li><li><a href="https://wa.me/5562985558320" target="_blank">(62) 98555-8320</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Rafael Soares Manutenção e Reformas · Goiânia, GO</p><p><a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="cookies.html">Cookies</a></p></div>
+  </div>
+</footer>
+</div>
+
+<a href="https://wa.me/5562985558320?text=Olá!%20Vi%20o%20site%20rafaelsoares.pro%20e%20quero%20saber%20mais." class="wa-btn" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-label">Falar no WhatsApp</span>
+</a>
+
+<div id="cookieBox" class="cookie-box" role="dialog" aria-live="polite">
+  <div class="cookie-content">
+    <p><strong>🍪 Privacidade e cookies</strong><br>Este site usa cookies para garantir a melhor experiência. Escolha suas preferências.</p>
+    <div class="cookie-btns"><button id="acceptEssential" type="button" class="btn-o">Apenas essenciais</button><button id="configureCookies" type="button" class="btn-g">Configurar</button><button id="acceptAll" type="button" class="btn-g">Aceitar todos</button></div>
+    <a href="cookies.html" class="cookie-link">Política de Cookies</a>
+  </div>
+</div>
+<div id="cookieModal" class="cookie-modal" role="dialog" aria-modal="true">
+  <div class="cookie-modal-content">
+    <div class="cookie-modal-header"><h3>Configurações de Cookies</h3><button id="closeModal" type="button" class="cookie-close">&times;</button></div>
+    <div class="cookie-modal-body">
+      <div class="cookie-option"><div class="cookie-option-header"><h4>Cookies Essenciais</h4><input type="checkbox" checked disabled></div><p>Necessários para o funcionamento básico. Não podem ser desabilitados.</p></div>
+      <div class="cookie-option"><div class="cookie-option-header"><h4>Cookies de Análise</h4><input type="checkbox" id="analyticsCookies"></div><p>Ajudam a entender como você usa o site.</p></div>
+      <div class="cookie-option"><div class="cookie-option-header"><h4>Cookies de Marketing</h4><input type="checkbox" id="marketingCookies"></div><p>Usados para personalizar conteúdo baseado nos seus interesses.</p></div>
+    </div>
+    <div class="cookie-modal-footer"><button id="rejectAllModal" class="btn-o" style="color:var(--smoke)">Rejeitar todos</button><button id="savePreferences" class="btn-g">Salvar</button><button id="acceptAllModal" class="btn-g">Aceitar todos</button></div>
+  </div>
+</div>
+<div id="exitModal" class="exit-modal" role="dialog" aria-modal="true">
+  <div class="exit-modal-card">
+    <h3>Espere! Temos algo para você.</h3>
+    <p>Antes de sair — um plano preventivo pode evitar emergências caras. Vamos conversar agora, sem compromisso. Resposta em até 2 horas.</p>
+    <div class="exit-modal-actions"><button id="stayButton" type="button" class="exit-close">Continuar navegando</button><button id="contactExit" type="button" class="exit-contact">Quero saber mais →</button></div>
+    <p class="exit-note">✓ Diagnóstico gratuito · ✓ Sem taxa de adesão · ✓ Goiânia e Aparecida</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('out'),1800));
+const cur=document.getElementById('cur'),curR=document.getElementById('cur-ring');
+if(cur&&curR){let mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});(function loop(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(loop)})();document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='26px';cur.style.height='26px';curR.style.width='52px';curR.style.height='52px';curR.style.opacity='.28'});el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';curR.style.width='32px';curR.style.height='32px';curR.style.opacity='.55'})});}
+(()=>{const cv=document.getElementById('scene');if(!cv)return;const cx=cv.getContext('2d');if(!cx)return;let W,H,pts=[];const resize=()=>{W=cv.width=window.innerWidth;H=cv.height=window.innerHeight};const mk=()=>{pts=[];for(let i=0;i<52;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32,r:Math.random()*1.1+.4})};const draw=()=>{cx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<130){cx.beginPath();cx.strokeStyle=`rgba(184,134,11,${(1-d/130)*.1})`;cx.lineWidth=.7;cx.moveTo(pts[i].x,pts[i].y);cx.lineTo(pts[j].x,pts[j].y);cx.stroke()}}pts.forEach(p=>{cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle='rgba(184,134,11,.25)';cx.fill();p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1});requestAnimationFrame(draw)};resize();mk();draw();window.addEventListener('resize',()=>{resize();mk()})})();
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('anchored',scrollY>60));
+function toggleNav(){const m=document.getElementById('navMenu');const open=m.classList.toggle('open');document.getElementById('burger').setAttribute('aria-expanded',open);}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navMenu').classList.remove('open')));
+const tItems=['✦ Goiânia &amp; Aparecida','<strong>Manutenção Preventiva</strong>','✦ Resolve Antes de Quebrar','<strong>Planos com Garantia</strong>','✦ Condomínios · Imobiliárias · Famílias','<strong>5× mais barato</strong>','✦ Contrato + Relatório Mensal','<strong>+200 imóveis atendidos</strong>','✦ 97% de renovação','<strong>Diagnóstico Gratuito</strong>'];
+const track=document.getElementById('tickerTrack');if(track){const c=[...tItems,...tItems].map(t=>`<span class="ticker-item">${t}<span class="ticker-sep">·</span></span>`).join('');track.innerHTML=c+c}
+const ro=new IntersectionObserver((ents)=>{ents.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('up'),i*65);ro.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>ro.observe(el));
+const co=new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){const el=e.target,t=+el.dataset.t,s=t/(1800/16);let c=0;const tm=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(tm)}el.textContent=Math.floor(c)},16);co.unobserve(el)}})},{threshold:.5});document.querySelectorAll('.cnt').forEach(el=>co.observe(el));
+const bo=new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.cost-bar-fill').forEach(b=>b.style.width=b.dataset.w+'%');bo.disconnect()}})},{threshold:.4});const sb=document.getElementById('bSafe');if(sb){const c=sb.closest('.prob-cost-card');if(c)bo.observe(c)}
+window.addEventListener('load',()=>{const ctx=document.getElementById('ecoChart');if(!ctx)return;new Chart(ctx,{type:'line',data:{labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],datasets:[{label:'Com Plano (R$)',data:[250,250,250,250,250,250,250,250,250,250,250,250],borderColor:'#4caf7d',backgroundColor:'rgba(76,175,125,.1)',borderWidth:2,pointRadius:4,pointBackgroundColor:'#4caf7d',fill:true,tension:.4},{label:'Sem Plano — Emergências (R$)',data:[0,0,1200,0,0,800,0,1500,0,0,600,2500],borderColor:'#e57373',backgroundColor:'rgba(229,115,115,.08)',borderWidth:2,pointRadius:4,pointBackgroundColor:'#e57373',fill:true,tension:.4}]},options:{responsive:true,plugins:{legend:{labels:{color:'#8a8278',font:{size:11},padding:14}},tooltip:{mode:'index',intersect:false}},scales:{x:{ticks:{color:'#8a8278',font:{size:10}},grid:{color:'rgba(0,0,0,.05)'}},y:{ticks:{color:'#8a8278',font:{size:10},callback:v=>'R$ '+v},grid:{color:'rgba(0,0,0,.05)'}}}}});});
+function heroLead(){const n=document.getElementById('hN').value.trim(),p=document.getElementById('hP').value.trim(),t=document.getElementById('hT').value;if(!n||!p){alert('Por favor, preencha seu nome e WhatsApp.');return}window.open(`https://wa.me/5562985558320?text=${encodeURIComponent('Olá Rafael!\n\nMeu nome é '+n+'.\nQuero diagnóstico gratuito para: '+(t||'meu imóvel')+'.\nMeu WhatsApp: '+p+'\n\nVi no site rafaelsoares.pro')}`,'_blank');}
+function submitCForm(e){e.preventDefault();const fd=new FormData(document.getElementById('cForm'));window.open(`https://wa.me/5562985558320?text=${encodeURIComponent('*Nova Solicitação — rafaelsoares.pro*\n\n👤 Nome: '+fd.get('nome')+'\n📱 WhatsApp: '+fd.get('whatsapp')+'\n✉️ E-mail: '+(fd.get('email')||'—')+'\n🏠 Tipo: '+fd.get('tipo')+'\n📍 Bairro: '+(fd.get('bairro')||'—')+'\n💬 Mensagem: '+(fd.get('mensagem')||'—'))}`,'_blank');const m=document.getElementById('formMsg2');m.className='ok';m.textContent='✅ Solicitação enviada! Retornamos em até 2 horas.';document.getElementById('cForm').reset();}
+(()=>{const box=document.getElementById('cookieBox'),modal=document.getElementById('cookieModal');if(!box||!modal)return;if(!localStorage.getItem('cookieConsent'))setTimeout(()=>box.classList.add('active'),300);const set=(e,a,m)=>{localStorage.setItem('cookieConsent',JSON.stringify({essential:e,analytics:a,marketing:m}));box.classList.remove('active');modal.classList.remove('active')};document.getElementById('acceptEssential').onclick=()=>set(true,false,false);document.getElementById('acceptAll').onclick=()=>set(true,true,true);document.getElementById('configureCookies').onclick=()=>modal.classList.add('active');document.getElementById('closeModal').onclick=()=>modal.classList.remove('active');document.getElementById('savePreferences').onclick=()=>set(true,!!document.getElementById('analyticsCookies')?.checked,!!document.getElementById('marketingCookies')?.checked);document.getElementById('acceptAllModal').onclick=()=>set(true,true,true);document.getElementById('rejectAllModal').onclick=()=>set(true,false,false);modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('active')});const em=document.getElementById('exitModal'),sb=document.getElementById('stayButton'),ce=document.getElementById('contactExit');if(em&&sb&&ce){let shown=sessionStorage.getItem('es')==='1';document.addEventListener('mouseout',e=>{if(shown||window.innerWidth<=800)return;if(e.clientY<=10&&!e.relatedTarget){shown=true;sessionStorage.setItem('es','1');em.classList.add('active')}});sb.onclick=()=>em.classList.remove('active');ce.onclick=()=>{em.classList.remove('active');window.open('https://wa.me/5562985558320?text=Ol%C3%A1!%20Quero%20atendimento%20priorit%C3%A1rio.','_blank')};em.addEventListener('click',e=>{if(e.target===em)em.classList.remove('active')});document.addEventListener('keydown',e=>{if(e.key==='Escape')em.classList.remove('active')})}})();
+</script>
 </body>
 </html>
