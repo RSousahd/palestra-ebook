@@ -388,12 +388,58 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
 .footer-bottom a:hover{color:var(--gold)}
 
 /* ── WHATSAPP ────────────────────────────── */
-.wa-btn{position:fixed;bottom:28px;right:28px;z-index:500;display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;text-decoration:none;padding:14px;border-radius:50%;width:56px;height:56px;font-family:var(--f-sans);font-weight:700;font-size:.81rem;box-shadow:0 8px 32px rgba(37,211,102,.3);transition:transform .3s var(--ease-back),box-shadow .3s;position:relative}
-.wa-btn:hover{transform:scale(1.06) translateY(-3px);box-shadow:0 16px 48px rgba(37,211,102,.4)}
-.wa-btn svg{width:28px;height:28px;fill:#fff;flex-shrink:0}
-.wa-label{display:none !important}
-.wa-pulse{position:absolute;top:-3px;right:-3px;width:15px;height:15px;background:#25D366;border-radius:50%;animation:waPulse 2s infinite}
+.wa-btn{
+    position:fixed;
+    
+    /* NOVA POSIÇÃO */
+    bottom:28px;
+    left:28px;
 
+    z-index:500;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    padding:14px;
+    border-radius:50%;
+    width:56px;
+    height:56px;
+    font-family:var(--f-sans);
+    font-weight:700;
+    font-size:.81rem;
+    box-shadow:0 8px 32px rgba(37,211,102,.3);
+    transition:transform .3s var(--ease-back),box-shadow .3s;
+}
+
+.wa-btn:hover{
+    transform:scale(1.06) translateY(-3px);
+    box-shadow:0 16px 48px rgba(37,211,102,.4);
+}
+
+.wa-btn svg{
+    width:28px;
+    height:28px;
+    fill:#fff;
+    flex-shrink:0;
+}
+
+.wa-label{
+    display:none !important;
+}
+
+.wa-pulse{
+    position:absolute;
+    top:-3px;
+    left:auto;
+    right:-3px;
+    width:15px;
+    height:15px;
+    background:#25D366;
+    border-radius:50%;
+    animation:waPulse 2s infinite;
+}
 /* ── COOKIE & MODALS ─────────────────────── */
 .cookie-box{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:var(--paper);padding:20px 56px;z-index:1000;transform:translateY(100%);opacity:0;transition:transform .4s var(--ease),opacity .4s;border-top:1px solid rgba(255,255,255,.08);box-shadow:0 -4px 28px rgba(0,0,0,.15)}
 .cookie-box.active{transform:translateY(0);opacity:1}
