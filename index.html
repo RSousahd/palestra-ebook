@@ -537,6 +537,161 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
   .exit-modal-actions{flex-direction:column}
   .exit-modal-actions button{text-align:center}
 }
+
+/* Modals */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: var(--cream);
+  margin: auto;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.close-button {
+  color: var(--ink);
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: var(--gold);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-title {
+  font-family: var(--f-serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-description {
+  font-size: 1.05rem;
+  color: var(--smoke);
+  line-height: 1.78;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.modal-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.modal-features li {
+  background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b8860b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") no-repeat left center;
+  background-size: 16px;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  color: var(--ink);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.modal-features li strong {
+  color: var(--gold);
+}
+
+.modal-price {
+  font-family: var(--f-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.modal-price strong {
+  font-size: 2.2rem;
+  color: var(--gold);
+}
+
+.modal-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 14px 30px;
+  background-color: var(--gold);
+  color: var(--white) !important;
+  border-radius: var(--r);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-btn:hover {
+  background-color: var(--gold-l);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 25px;
+    width: 95%;
+  }
+  .modal-title {
+    font-size: 2rem;
+  }
+  .modal-description {
+    font-size: 0.95rem;
+  }
+  .modal-features li {
+    font-size: 0.9rem;
+  }
+  .modal-price {
+    font-size: 1.5rem;
+  }
+  .modal-price strong {
+    font-size: 1.8rem;
+  }
+  .modal-btn {
+    padding: 12px 25px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -693,7 +848,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
         <ul class="plan-features"><li>Visita mensal de check-up completo</li><li>Revisão de iluminação e elétrica</li><li>Verificação de vazamentos</li><li>Ajustes de acessibilidade</li><li>Desobstrução de calhas</li><li>Relatório mensal por WhatsApp</li></ul>
         <div class="plan-divider"></div>
         <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 150 <span class="plan-price-period">/ mês</span></div>
-        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20no%20Plano%20Residencial%20Sênior." class="plan-btn" target="_blank" rel="noopener">Solicitar Plano →</a>
+        <a href="#" class="plan-btn" onclick="openModal(modalSenior)">Solicitar Plano →</a>
       </div>
       <div class="plan-card featured reveal">
         <div class="plan-featured-tag">Mais Popular</div>
@@ -703,7 +858,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
         <ul class="plan-features"><li>Gestão de toda a carteira</li><li>Reparos de entrada e saída</li><li>Manutenção preventiva mensal</li><li>Relatório fotográfico detalhado</li><li>Prioridade no atendimento</li><li>Orçamentos em até 4 horas</li></ul>
         <div class="plan-divider"></div>
         <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 50 <span class="plan-price-period">/ imóvel / mês</span></div>
-        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20no%20Retainer%20Imobiliário." class="plan-btn" target="_blank" rel="noopener">Falar com Rafael →</a>
+        <a href="#" class="plan-btn" onclick="openModal(modalImobiliario)">Falar com Rafael →</a>
       </div>
       <div class="plan-card reveal">
         <div class="plan-avatar">🏗️</div><div class="plan-audience">Para Condomínios</div>
@@ -712,7 +867,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
         <ul class="plan-features"><li>Inspeção predial periódica</li><li>Plano de manutenção anual</li><li>Laudos técnicos assinados</li><li>Conformidade com lei GO</li><li>Gestão de fornecedores</li><li>Reunião mensal com síndico</li></ul>
         <div class="plan-divider"></div>
         <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 1.500 <span class="plan-price-period">/ mês</span></div>
-        <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20na%20Zeladoria%20Técnica%20Predial." class="plan-btn" target="_blank" rel="noopener">Solicitar Plano →</a>
+        <a href="#" class="plan-btn" onclick="openModal(modalPredial)">Solicitar Plano →</a>
       </div>
     </div>
   </div>
@@ -913,5 +1068,151 @@ function heroLead(){const n=document.getElementById('hN').value.trim(),p=documen
 function submitCForm(e){e.preventDefault();const fd=new FormData(document.getElementById('cForm'));window.open(`https://wa.me/5562985558320?text=${encodeURIComponent('*Nova Solicitação — rafaelsoares.pro*\n\n👤 Nome: '+fd.get('nome')+'\n📱 WhatsApp: '+fd.get('whatsapp')+'\n✉️ E-mail: '+(fd.get('email')||'—')+'\n🏠 Tipo: '+fd.get('tipo')+'\n📍 Bairro: '+(fd.get('bairro')||'—')+'\n💬 Mensagem: '+(fd.get('mensagem')||'—'))}`,'_blank');const m=document.getElementById('formMsg2');m.className='ok';m.textContent='✅ Solicitação enviada! Retornamos em até 2 horas.';document.getElementById('cForm').reset();}
 (()=>{const box=document.getElementById('cookieBox'),modal=document.getElementById('cookieModal');if(!box||!modal)return;if(!localStorage.getItem('cookieConsent'))setTimeout(()=>box.classList.add('active'),300);const set=(e,a,m)=>{localStorage.setItem('cookieConsent',JSON.stringify({essential:e,analytics:a,marketing:m}));box.classList.remove('active');modal.classList.remove('active')};document.getElementById('acceptEssential').onclick=()=>set(true,false,false);document.getElementById('acceptAll').onclick=()=>set(true,true,true);document.getElementById('configureCookies').onclick=()=>modal.classList.add('active');document.getElementById('closeModal').onclick=()=>modal.classList.remove('active');document.getElementById('savePreferences').onclick=()=>set(true,!!document.getElementById('analyticsCookies')?.checked,!!document.getElementById('marketingCookies')?.checked);document.getElementById('acceptAllModal').onclick=()=>set(true,true,true);document.getElementById('rejectAllModal').onclick=()=>set(true,false,false);modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('active')});const em=document.getElementById('exitModal'),sb=document.getElementById('stayButton'),ce=document.getElementById('contactExit');if(em&&sb&&ce){let shown=sessionStorage.getItem('es')==='1';document.addEventListener('mouseout',e=>{if(shown||window.innerWidth<=800)return;if(e.clientY<=10&&!e.relatedTarget){shown=true;sessionStorage.setItem('es','1');em.classList.add('active')}});sb.onclick=()=>em.classList.remove('active');ce.onclick=()=>{em.classList.remove('active');window.open('https://wa.me/5562985558320?text=Ol%C3%A1!%20Quero%20atendimento%20priorit%C3%A1rio.','_blank')};em.addEventListener('click',e=>{if(e.target===em)em.classList.remove('active')});document.addEventListener('keydown',e=>{if(e.key==='Escape')em.classList.remove('active')})}})();
 </script>
+
+<!-- Modals -->
+<div id="modal-residencial-senior" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h3 class="modal-title">Assinatura Residencial Sênior</h3>
+    <p class="modal-description">Moradia segura e tranquilidade para toda a família. Nosso plano sênior é desenhado para oferecer paz de espírito, garantindo que o lar esteja sempre em perfeitas condições e adaptado às necessidades dos idosos.</p>
+    <ul class="modal-features">
+      <li><strong>Check-up de Acessibilidade:</strong> Avaliação e sugestões para instalação de barras de apoio, nivelamento de pisos e melhoria da iluminação em áreas de circulação.</li>
+      <li><strong>Prevenção de Quedas:</strong> Verificação e fixação de tapetes, eliminação de fiações soltas e desobstrução de caminhos para garantir um ambiente seguro.</li>
+      <li><strong>Manutenção Elétrica Preventiva:</strong> Inspeção e reaperto de conexões em quadros elétricos, troca de lâmpadas queimadas e testes de tomadas para evitar sobrecargas e curtos.</li>
+      <li><strong>Hidráulica sem Vazamentos:</strong> Troca de reparos de torneiras, limpeza de sifões e verificação de caixas acopladas para prevenir vazamentos e desperdício de água.</li>
+      <li><strong>Segurança Térmica:</strong> Limpeza de filtros de ar-condicionado para melhor qualidade do ar e verificação de chuveiros (resistências e fiação) para segurança no banho.</li>
+      <li><strong>Relatório de Cuidado Detalhado:</strong> Envio de fotos e um relatório completo do status do imóvel para os familiares via WhatsApp após cada visita, garantindo total transparência.</li>
+      <li><strong>Pequenos Reparos Inclusos:</strong> Troca de lâmpadas, reparos em tomadas, ajustes em portas e janelas, e outros pequenos serviços que surgem no dia a dia.</li>
+      <li><strong>Atendimento Prioritário:</strong> Resposta rápida para qualquer solicitação, com agendamento flexível para se adaptar à rotina do idoso.</li>
+    </ul>
+    <div class="modal-price">A partir de <strong>R$ 150</strong> / mês</div>
+    <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20no%20Plano%20Residencial%20Sênior%20e%20gostaria%20de%20mais%20detalhes." class="plan-btn modal-btn" target="_blank" rel="noopener">Solicitar Plano via WhatsApp →</a>
+  </div>
+</div>
+
+<div id="modal-retainer-imobiliario" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h3 class="modal-title">Retainer Imobiliário</h3>
+    <p class="modal-description">Um parceiro único para toda a sua carteira de imóveis. Nosso serviço de retainer imobiliário garante agilidade na gestão, minimiza vacância e maximiza a rentabilidade dos seus ativos.</p>
+    <ul class="modal-features">
+      <li><strong>Vistoria Técnica Pré-Entrega:</strong> Checklist detalhado de mais de 50 itens para assegurar que o imóvel esteja em condições impecáveis para o novo inquilino, evitando futuras dores de cabeça.</li>
+      <li><strong>Reparos "Express" de Saída:</strong> Serviços rápidos de pintura de retoque, fechamento de furos, troca de acessórios danificados e pequenos ajustes para agilizar a nova locação.</li>
+      <li><strong>Gestão de Chaves e Acesso:</strong> Facilitação do acesso para corretores e potenciais inquilinos, garantindo que o imóvel esteja sempre pronto para visitação sem burocracia.</li>
+      <li><strong>Prevenção de Sinistros:</strong> Limpeza trimestral de calhas e ralos em imóveis vagos para prevenir infiltrações, mofo e outros danos que desvalorizam o patrimônio.</li>
+      <li><strong>Laudo Fotográfico de Estado:</strong> Documentação completa com fotos e descrições detalhadas do estado do imóvel, servindo como prova em caso de disputas de caução ou danos.</li>
+      <li><strong>Atendimento Emergencial Prioritário:</strong> Resposta ágil para qualquer problema inesperado, evitando que pequenos incidentes se transformem em grandes reclamações ou ações judiciais.</li>
+      <li><strong>Manutenção Preventiva Mensal:</strong> Visitas programadas para inspeções gerais, ajustes e pequenos reparos, mantendo o imóvel sempre valorizado e em conformidade.</li>
+      <li><strong>Orçamentos em até 4 Horas:</strong> Agilidade na apresentação de orçamentos para reparos maiores, permitindo decisões rápidas e eficientes.</li>
+    </ul>
+    <div class="modal-price">A partir de <strong>R$ 50</strong> / imóvel / mês</div>
+    <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20no%20Retainer%20Imobiliário%20e%20gostaria%20de%20mais%20detalhes." class="plan-btn modal-btn" target="_blank" rel="noopener">Falar com Rafael via WhatsApp →</a>
+  </div>
+</div>
+
+<div id="modal-zeladoria-predial" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h3 class="modal-title">Zeladoria Técnica Predial</h3>
+    <p class="modal-description">Responsabilidade técnica pela saúde estrutural do seu edifício. Nosso serviço de zeladoria predial oferece segurança, conformidade legal e valorização do patrimônio para síndicos e administradoras.</p>
+    <ul class="modal-features">
+      <li><strong>Cronograma de Manutenção Preventiva (CMP):</strong> Elaboração e execução de um planejamento anual detalhado de todas as intervenções necessárias, garantindo a longevidade do edifício.</li>
+      <li><strong>Inspeção de Áreas Comuns:</strong> Verificação mensal de sistemas de bombas, portões eletrônicos, iluminação de emergência, para-raios e outras infraestruturas críticas.</li>
+      <li><strong>Gestão e Acompanhamento de Terceiros:</strong> Supervisão técnica de serviços maiores (pintura de fachada, impermeabilização, reformas) para assegurar a qualidade e o cumprimento dos prazos.</li>
+      <li><strong>Conformidade com a Lei de Inspeção Predial (GO):</strong> Emissão de relatórios técnicos que auxiliam na obtenção e renovação do laudo técnico obrigatório, evitando multas e problemas legais.</li>
+      <li><strong>Prevenção e Combate a Incêndio:</strong> Verificação visual de extintores, mangueiras, hidrantes e sinalização de emergência, garantindo a segurança dos moradores.</li>
+      <li><strong>Assessoria em Assembleias:</strong> Participação técnica para apresentar e explicar as necessidades de manutenção e obras aos condôminos, promovendo transparência e confiança.</li>
+      <li><strong>Laudos Técnicos Assinados:</strong> Emissão de laudos por profissional habilitado, atestando a condição e segurança das instalações do condomínio.</li>
+      <li><strong>Reunião Mensal com Síndico:</strong> Encontros periódicos para alinhamento, apresentação de relatórios de progresso e planejamento das próximas ações.</li>
+    </ul>
+    <div class="modal-price">A partir de <strong>R$ 1.500</strong> / mês</div>
+    <a href="https://wa.me/5562985558320?text=Olá!%20Tenho%20interesse%20na%20Zeladoria%20Técnica%20Predial%20e%20gostaria%20de%20mais%20detalhes." class="plan-btn modal-btn" target="_blank" rel="noopener">Solicitar Plano via WhatsApp →</a>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the modals
+    var modalSenior = document.getElementById('modal-residencial-senior');
+    var modalImobiliario = document.getElementById('modal-retainer-imobiliario');
+    var modalPredial = document.getElementById('modal-zeladoria-predial');
+
+    // Get the buttons that open the modals
+    var btnSenior = document.querySelector('.plan-card:nth-child(1) .plan-btn');
+    var btnImobiliario = document.querySelector('.plan-card:nth-child(2) .plan-btn');
+    var btnPredial = document.querySelector('.plan-card:nth-child(3) .plan-btn');
+
+    // Get the <span> element that closes the modal
+    var closeButtons = document.querySelectorAll('.close-button');
+
+    // Function to open a modal
+    function openModal(modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling of the background
+    }
+
+    // Function to close a modal
+    function closeModal(modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = ''; // Re-enable scrolling
+    }
+
+    // When the user clicks on the button, open the corresponding modal
+    if (btnSenior) {
+      btnSenior.onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        openModal(modalSenior);
+      }
+    }
+    if (btnImobiliario) {
+      btnImobiliario.onclick = function(event) {
+        event.preventDefault();
+        openModal(modalImobiliario);
+      }
+    }
+    if (btnPredial) {
+      btnPredial.onclick = function(event) {
+        event.preventDefault();
+        openModal(modalPredial);
+      }
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    closeButtons.forEach(function(btn) {
+      btn.onclick = function() {
+        var parentModal = this.closest('.modal');
+        if (parentModal) {
+          closeModal(parentModal);
+        }
+      }
+    });
+
+    // When the user clicks anywhere outside of the modal content, close it
+    window.onclick = function(event) {
+      if (event.target == modalSenior) {
+        closeModal(modalSenior);
+      } else if (event.target == modalImobiliario) {
+        closeModal(modalImobiliario);
+      } else if (event.target == modalPredial) {
+        closeModal(modalPredial);
+      }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        if (modalSenior.classList.contains('active')) {
+          closeModal(modalSenior);
+        } else if (modalImobiliario.classList.contains('active')) {
+          closeModal(modalImobiliario);
+        } else if (modalPredial.classList.contains('active')) {
+          closeModal(modalPredial);
+        }
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
