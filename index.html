@@ -1,19 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Facebook Pixel Base Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_FACEBOOK_PIXEL_ID'); // Substitua 'YOUR_FACEBOOK_PIXEL_ID' pelo seu ID de Pixel
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_FACEBOOK_PIXEL_ID&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Base Code -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-YOUR_GOOGLE_ADS_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-YOUR_GOOGLE_ADS_ID'); // Substitua 'AW-YOUR_GOOGLE_ADS_ID' pelo seu ID do Google Ads
+</script>
+<!-- End Google tag -->
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Rafael Soares | Manutenção Preventiva Goiânia — Resolve Antes de Quebrar</title>
-<meta name="description" content="Especialista em manutenção preventiva residencial e predial em Goiânia e Aparecida de Goiânia. Planos de assinatura para famílias, imobiliárias e condomínios."/>
-<meta name="author" content="Rafael Soares"/>
+<meta name="description" content="Especialista em manutenção preventiva residencial e predial em Goiânia e Aparecida de Goiânia. Resolve antes de quebrar. Planos de assinatura para famílias, imobiliárias e condomínios com contrato e garantia."/>
+
 <meta name="robots" content="index, follow"/>
+<meta name="rating" content="General"/>
+<meta name="author" content="Rafael Soares"/>
+
 <link rel="canonical" href="https://rafaelsoares.pro"/>
 <meta property="og:title" content="Rafael Soares | Manutenção Preventiva Goiânia"/>
-<meta property="og:description" content="Para de pagar caro em emergências. Planos de manutenção preventiva para residências, imobiliárias e condomínios em Goiânia."/>
+<meta property="og:description" content="Resolve antes de quebrar. Planos de manutenção preventiva para residências, imobiliárias e condomínios em Goiânia e Aparecida de Goiânia. Contrato, garantia e profissional de confiança."/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:site_name" content="Rafael Soares | Manutenção Preventiva"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://rafaelsoares.pro"/>
 <meta property="og:image" content="https://rafaelsoares.pro/img/bannes.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Rafael Soares | Manutenção Preventiva Goiânia — Resolve Antes de Quebrar"/>
+<meta name="twitter:description" content="Especialista em manutenção preventiva residencial e predial em Goiânia e Aparecida de Goiânia. Resolve antes de quebrar. Planos de assinatura para famílias, imobiliárias e condomínios com contrato e garantia."/>
+<meta name="twitter:image" content="https://rafaelsoares.pro/img/bannes.png"/>
+<meta name="twitter:creator" content="@RafaelSoaresPro"/>
 <meta name="theme-color" content="#b8860b"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -23,16 +61,74 @@
 <script type="application/ld+json">{
   "@context":"https://schema.org",
   "@type":"HomeAndConstructionBusiness",
-  "name":"Rafael Soares Manutenção Preventiva",
-  "url":"https://rafaelsoares.pro",
-  "telephone":"+5562985558320",
-  "email":"rafaelsoaresproo@gmail.com",
-  "image":"https://rafaelsoares.pro/img/bannes.png",
-  "address":{"@type":"PostalAddress","addressLocality":"Goiânia","addressRegion":"GO","addressCountry":"BR"},
-  "areaServed":[{"@type":"City","name":"Goiânia"},{"@type":"City","name":"Aparecida de Goiânia"}],
-  "priceRange":"R$$",
-  "openingHours":["Mo-Fr 07:00-18:00","Sa 08:00-13:00"]
-}</script>
+          "name":"Rafael Soares Manutenção Preventiva",
+          "description": "Especialista em manutenção preventiva residencial e predial em Goiânia e Aparecida de Goiânia. Resolve antes de quebrar. Planos de assinatura para famílias, imobiliárias e condomínios com contrato e garantia.",
+          "url":"https://rafaelsoares.pro",
+          "telephone":"+5562985558320",
+          "email":"rafaelsoaresproo@gmail.com",
+          "image":"https://rafaelsoares.pro/img/bannes.png",
+          "address":{"@type":"PostalAddress","addressLocality":"Goiânia","addressRegion":"GO","addressCountry":"BR"},
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Planos de Manutenção Preventiva",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Assinatura Residencial Sênior",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Manutenção Preventiva para Idosos",
+                  "description": "Moradia segura e tranquilidade para toda a família. Visita mensal com check-up completo e pequenos reparos incluídos.",
+                  "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "BRL",
+                    "price": "150",
+                    "priceSpecification": {
+                      "@type": "PriceSpecification",
+                      "valueAddedTaxIncluded": true
+                    }
+                  }
+                }
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Retainer Imobiliário",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gestão de Manutenção para Imobiliárias",
+                  "description": "Um parceiro único para toda sua carteira. Gestão completa — entrada, saída de inquilinos e manutenção preventiva.",
+                  "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "BRL",
+                    "price": "50",
+                    "priceSpecification": {
+                      "@type": "PriceSpecification",
+                      "valueAddedTaxIncluded": true
+                    }
+                  }
+                }
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Zeladoria Técnica Predial",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Zeladoria e Manutenção para Condomínios",
+                  "description": "Responsabilidade técnica pela saúde estrutural do seu edifício — laudos, cronograma e conformidade legal.",
+                  "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "BRL",
+                    "price": "1500",
+                    "priceSpecification": {
+                      "@type": "PriceSpecification",
+                      "valueAddedTaxIncluded": true
+                    }
+                  }
+                }
+              }
+            ]
+          }
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
@@ -735,7 +831,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
     </h1>
     <p class="h-sub">Chega de pagar <strong>5× mais caro</strong> em emergências.<br>Planos de manutenção preventiva com contrato, garantia e um profissional de <strong>confiança real</strong> — para residências, imobiliárias e condomínios.</p>
     <div class="h-btns">
-      <a href="https://wa.me/5562985558320?text=Olá%20Rafael!%20Vi%20o%20site%20e%20quero%20conhecer%20os%20planos." class="btn-ink" target="_blank" rel="noopener">
+      <a href="https://wa.me/5562985558320?text=Olá%20Rafael!%20Vi%20o%20site%20e%20quero%20conhecer%20os%20planos." class="btn-ink" target="_blank" rel="noopener" onclick="fbq(\'track\', \'Contact\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONTACT_LABEL\'});">
         <span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Quero meu Plano</span>
       </a>
       <a href="#services" class="btn-ghost">Ver Planos →</a>
@@ -762,7 +858,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
       <div class="form-field"><label>Tipo de Imóvel</label>
         <select id="hT"><option value="">Selecione...</option><option value="Residência / Casa">Residência / Casa</option><option value="Apartamento">Apartamento</option><option value="Imobiliária (vários imóveis)">Imobiliária (vários imóveis)</option><option value="Condomínio / Prédio">Condomínio / Prédio</option></select>
       </div>
-      <button class="card-btn" onclick="heroLead()"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Solicitar Diagnóstico Grátis</span></button>
+      <button class="card-btn" onclick="heroLead(); fbq(\'track\', \'Lead\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONVERSION_LABEL\'});"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Solicitar Diagnóstico Grátis</span></button>
       <div class="card-seal"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Atendemos Goiânia e Aparecida · Resposta em até 2h</div>
     </div>
   </div>
@@ -848,7 +944,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
         <ul class="plan-features"><li>Visita mensal de check-up completo</li><li>Revisão de iluminação e elétrica</li><li>Verificação de vazamentos</li><li>Ajustes de acessibilidade</li><li>Desobstrução de calhas</li><li>Relatório mensal por WhatsApp</li></ul>
         <div class="plan-divider"></div>
         <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 150 <span class="plan-price-period">/ mês</span></div>
-        <a href="#" class="plan-btn" onclick="openModal(modalSenior)">Solicitar Plano →</a>
+        <a href="#" class="plan-btn" onclick="openModal(modalSenior); fbq(\'track\', \'Lead\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONVERSION_LABEL\'});">Solicitar Plano →</a>
       </div>
       <div class="plan-card featured reveal">
         <div class="plan-featured-tag">Mais Popular</div>
@@ -858,7 +954,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
         <ul class="plan-features"><li>Gestão de toda a carteira</li><li>Reparos de entrada e saída</li><li>Manutenção preventiva mensal</li><li>Relatório fotográfico detalhado</li><li>Prioridade no atendimento</li><li>Orçamentos em até 4 horas</li></ul>
         <div class="plan-divider"></div>
         <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 50 <span class="plan-price-period">/ imóvel / mês</span></div>
-        <a href="#" class="plan-btn" onclick="openModal(modalImobiliario)">Falar com Rafael →</a>
+        <a href="#" class="plan-btn" onclick="openModal(modalImobiliario); fbq(\'track\', \'Lead\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONVERSION_LABEL\'});">Falar com Rafael →</a>
       </div>
       <div class="plan-card reveal">
         <div class="plan-avatar">🏗️</div><div class="plan-audience">Para Condomínios</div>
@@ -867,7 +963,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
         <ul class="plan-features"><li>Inspeção predial periódica</li><li>Plano de manutenção anual</li><li>Laudos técnicos assinados</li><li>Conformidade com lei GO</li><li>Gestão de fornecedores</li><li>Reunião mensal com síndico</li></ul>
         <div class="plan-divider"></div>
         <div class="plan-price-label">A partir de</div><div class="plan-price">R$ 1.500 <span class="plan-price-period">/ mês</span></div>
-        <a href="#" class="plan-btn" onclick="openModal(modalPredial)">Solicitar Plano →</a>
+        <a href="#" class="plan-btn" onclick="openModal(modalPredial); fbq(\'track\', \'Lead\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONVERSION_LABEL\'});">Solicitar Plano →</a>
       </div>
     </div>
   </div>
@@ -960,7 +1056,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
     <h2 class="cta-title reveal">Pare de pagar caro<br>por <em>emergências evitáveis</em></h2>
     <p class="cta-sub reveal">A próxima vez que um cano estourar às 23h ou o teto começar a vazar na chuva, você vai se lembrar desse momento. Não deixe para depois.</p>
     <div class="cta-btns reveal">
-      <a href="https://wa.me/5562985558320?text=Olá!%20Quero%20contratar%20um%20plano%20de%20manutenção%20preventiva." class="btn-ink" target="_blank" rel="noopener">
+      <a href="https://wa.me/5562985558320?text=Olá!%20Quero%20contratar%20um%20plano%20de%20manutenção%20preventiva." class="btn-ink" target="_blank" rel="noopener" onclick="fbq(\'track\', \'Lead\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONVERSION_LABEL\'});">
         <span><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Falar no WhatsApp Agora</span>
       </a>
       <a href="#contact" class="btn-ghost">Enviar Mensagem</a>
@@ -977,7 +1073,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
     <div class="contact-grid">
       <div class="contact-info reveal-l">
         <p class="contact-info-intro">Atendemos Goiânia e Aparecida de Goiânia. Entre em contato pelo canal que preferir — respondemos em até 2 horas em dias úteis.</p>
-        <a href="https://wa.me/5562985558320" class="cinfo-item" target="_blank" rel="noopener"><div class="cinfo-icon">💬</div><div><div class="cinfo-label">WhatsApp</div><div class="cinfo-val">(62) 98555-8320</div></div></a>
+        <a href="https://wa.me/5562985558320" class="cinfo-item" target="_blank" rel="noopener" onclick="fbq(\'track\', \'Contact\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONTACT_LABEL\'});"><div class="cinfo-icon">💬</div><div><div class="cinfo-label">WhatsApp</div><div class="cinfo-val">(62) 98555-8320</div></div></a>
         <a href="tel:+5562985558320" class="cinfo-item"><div class="cinfo-icon">📞</div><div><div class="cinfo-label">Telefone</div><div class="cinfo-val">(62) 98555-8320</div></div></a>
         <a href="mailto:rafaelsoaresproo@gmail.com" class="cinfo-item"><div class="cinfo-icon">✉️</div><div><div class="cinfo-label">E-mail</div><div class="cinfo-val">rafaelsoaresproo@gmail.com</div></div></a>
         <div class="cinfo-item" style="cursor:default"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">Área de Atendimento</div><div class="cinfo-val">Goiânia e Aparecida de Goiânia — GO</div></div></div>
@@ -1016,7 +1112,7 @@ footer{background:var(--ink);padding:80px 80px 40px;border-top:1px solid rgba(25
 </footer>
 </div>
 
-<a href="https://wa.me/5562985558320?text=Olá!%20Vi%20o%20site%20rafaelsoares.pro%20e%20quero%20saber%20mais." class="wa-btn" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a href="https://wa.me/5562985558320?text=Olá!%20Vi%20o%20site%20rafaelsoares.pro%20e%20quero%20saber%20mais." class="wa-btn" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" onclick="fbq(\'track\', \'Contact\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONTACT_LABEL\'});">
   <div class="wa-pulse"></div>
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span class="wa-label">Falar no WhatsApp</span>
@@ -1066,7 +1162,7 @@ const bo=new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){d
 window.addEventListener('load',()=>{const ctx=document.getElementById('ecoChart');if(!ctx)return;new Chart(ctx,{type:'line',data:{labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],datasets:[{label:'Com Plano (R$)',data:[250,250,250,250,250,250,250,250,250,250,250,250],borderColor:'#4caf7d',backgroundColor:'rgba(76,175,125,.1)',borderWidth:2,pointRadius:4,pointBackgroundColor:'#4caf7d',fill:true,tension:.4},{label:'Sem Plano — Emergências (R$)',data:[0,0,1200,0,0,800,0,1500,0,0,600,2500],borderColor:'#e57373',backgroundColor:'rgba(229,115,115,.08)',borderWidth:2,pointRadius:4,pointBackgroundColor:'#e57373',fill:true,tension:.4}]},options:{responsive:true,plugins:{legend:{labels:{color:'#8a8278',font:{size:11},padding:14}},tooltip:{mode:'index',intersect:false}},scales:{x:{ticks:{color:'#8a8278',font:{size:10}},grid:{color:'rgba(0,0,0,.05)'}},y:{ticks:{color:'#8a8278',font:{size:10},callback:v=>'R$ '+v},grid:{color:'rgba(0,0,0,.05)'}}}}});});
 function heroLead(){const n=document.getElementById('hN').value.trim(),p=document.getElementById('hP').value.trim(),t=document.getElementById('hT').value;if(!n||!p){alert('Por favor, preencha seu nome e WhatsApp.');return}window.open(`https://wa.me/5562985558320?text=${encodeURIComponent('Olá Rafael!\n\nMeu nome é '+n+'.\nQuero diagnóstico gratuito para: '+(t||'meu imóvel')+'.\nMeu WhatsApp: '+p+'\n\nVi no site rafaelsoares.pro')}`,'_blank');}
 function submitCForm(e){e.preventDefault();const fd=new FormData(document.getElementById('cForm'));window.open(`https://wa.me/5562985558320?text=${encodeURIComponent('*Nova Solicitação — rafaelsoares.pro*\n\n👤 Nome: '+fd.get('nome')+'\n📱 WhatsApp: '+fd.get('whatsapp')+'\n✉️ E-mail: '+(fd.get('email')||'—')+'\n🏠 Tipo: '+fd.get('tipo')+'\n📍 Bairro: '+(fd.get('bairro')||'—')+'\n💬 Mensagem: '+(fd.get('mensagem')||'—'))}`,'_blank');const m=document.getElementById('formMsg2');m.className='ok';m.textContent='✅ Solicitação enviada! Retornamos em até 2 horas.';document.getElementById('cForm').reset();}
-(()=>{const box=document.getElementById('cookieBox'),modal=document.getElementById('cookieModal');if(!box||!modal)return;if(!localStorage.getItem('cookieConsent'))setTimeout(()=>box.classList.add('active'),300);const set=(e,a,m)=>{localStorage.setItem('cookieConsent',JSON.stringify({essential:e,analytics:a,marketing:m}));box.classList.remove('active');modal.classList.remove('active')};document.getElementById('acceptEssential').onclick=()=>set(true,false,false);document.getElementById('acceptAll').onclick=()=>set(true,true,true);document.getElementById('configureCookies').onclick=()=>modal.classList.add('active');document.getElementById('closeModal').onclick=()=>modal.classList.remove('active');document.getElementById('savePreferences').onclick=()=>set(true,!!document.getElementById('analyticsCookies')?.checked,!!document.getElementById('marketingCookies')?.checked);document.getElementById('acceptAllModal').onclick=()=>set(true,true,true);document.getElementById('rejectAllModal').onclick=()=>set(true,false,false);modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('active')});const em=document.getElementById('exitModal'),sb=document.getElementById('stayButton'),ce=document.getElementById('contactExit');if(em&&sb&&ce){let shown=sessionStorage.getItem('es')==='1';document.addEventListener('mouseout',e=>{if(shown||window.innerWidth<=800)return;if(e.clientY<=10&&!e.relatedTarget){shown=true;sessionStorage.setItem('es','1');em.classList.add('active')}});sb.onclick=()=>em.classList.remove('active');ce.onclick=()=>{em.classList.remove('active');window.open('https://wa.me/5562985558320?text=Ol%C3%A1!%20Quero%20atendimento%20priorit%C3%A1rio.','_blank')};em.addEventListener('click',e=>{if(e.target===em)em.classList.remove('active')});document.addEventListener('keydown',e=>{if(e.key==='Escape')em.classList.remove('active')})}})();
+(()=>{const box=document.getElementById('cookieBox'),modal=document.getElementById('cookieModal');if(!box||!modal)return;if(!localStorage.getItem('cookieConsent'))setTimeout(()=>box.classList.add('active'),300);const set=(e,a,m)=>{localStorage.setItem('cookieConsent',JSON.stringify({essential:e,analytics:a,marketing:m}));box.classList.remove('active');modal.classList.remove('active')};document.getElementById('acceptEssential').onclick=()=>set(true,false,false);document.getElementById('acceptAll').onclick=()=>set(true,true,true);document.getElementById('configureCookies').onclick=()=>modal.classList.add('active');document.getElementById('closeModal').onclick=()=>modal.classList.remove('active');document.getElementById('savePreferences').onclick=()=>set(true,!!document.getElementById('analyticsCookies')?.checked,!!document.getElementById('marketingCookies')?.checked);document.getElementById('acceptAllModal').onclick=()=>set(true,true,true);document.getElementById('rejectAllModal').onclick=()=>set(true,false,false);modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('active')});const em=document.getElementById('exitModal'),sb=document.getElementById('stayButton'),ce=document.getElementById('contactExit');if(em&&sb&&ce){let shown=sessionStorage.getItem('es')==='1';document.addEventListener('mouseout',e=>{if(shown||window.innerWidth<=800)return;if(e.clientY<=10&&!e.relatedTarget){shown=true;sessionStorage.setItem('es','1');em.classList.add('active')}});sb.onclick=()=>em.classList.remove('actice.onclick=()=>{em.classList.remove(\'active\');window.open(\'https://wa.me/5562985558320?text=Ol%C3%A1!%20Quero%20atendimento%20priorit%C3%A1rio.\',\'_blank\'); fbq(\'track\', \'Lead\'); gtag(\'event\', \'conversion\', {\'_send_to\': \'AW-YOUR_GOOGLE_ADS_ID/YOUR_CONVERSION_LABEL\'});};m.addEventListener('click',e=>{if(e.target===em)em.classList.remove('active')});document.addEventListener('keydown',e=>{if(e.key==='Escape')em.classList.remove('active')})}})();
 </script>
 
 <!-- Modals -->
